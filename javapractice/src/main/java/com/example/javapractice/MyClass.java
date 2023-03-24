@@ -11,13 +11,7 @@ import java.util.Map;
 public class MyClass {
 
 
-        interface somaIcha {
-            int a = 0;
-        }
 
-        class done implements somaIcha {
-
-        }
 
         static List<String> arrayListOfString = Arrays.asList("a b c d e f g".split(" "));
         static Map<Integer,Integer> mapOfInts = new HashMap<Integer,Integer>();
