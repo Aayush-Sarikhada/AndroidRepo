@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_menu_margin_start">20dp</dimen>
+    <dimen name="toolbar_notification_margin_end">20dp</dimen>
+    <dimen name="toolbar_title_size">20sp</dimen>
+    <dimen name="toolbar_title_spacing" format="float">1.02</dimen>
+    <dimen name="border_stroke_width">1dp</dimen>
+    <dimen name="toolbar_icon_border_corner_radius">3dp</dimen>
+    <dimen name="tab_indicator_height">0dp</dimen>
+
+    <dimen name="heading_margin_start">20dp</dimen>
+    <dimen name="heading_margin_top">20dp</dimen>
+    <dimen name="heading_margin_end">20dp</dimen>
+
+    <dimen name="heading_exchange_text_size">28sp</dimen>
+    <dimen name="heading_date_text_size">12sp</dimen>
+
+    <dimen name="divider_margin_top">10dp</dimen>
+    <dimen name="divider_margin_start">20dp</dimen>
+    <dimen name="divider_margin_end">20dp</dimen>
+
+    <dimen name="divider_white_view_width">3dp</dimen>
+    <dimen name="divider_white_view_height">1dp</dimen>
+    <dimen name="divider_gray_view_height">1dp</dimen>
+
+    <dimen name="card_padding">20dp</dimen>
+    <dimen name="card_radius">10dp</dimen>
+    <dimen name="exchange_selector_card_radius">8dp</dimen>
+</resources>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">AndroidPracticeProject</string>
+    <string name="toolbarTitle">GEMINI</string>
+    <string name="tablayout_item_limit">Limit</string>
+    <string name="tablayout_item_market">Market</string>
+    <string name="tablayout_item_pool">Pool</string>
+    <string name="tablayout_item_info">Info</string>
+    <string name="heading_exchange">Exchange</string>
+    <string name="heading_date">OCTOBER 18, SATURDAY 3:19:23 PM</string>
+
+    <string name="your_exchange">Your exchange</string>
+    <string name="exchange_avax">AVAX</string>
+    <string name="menu_icon">menu icon</string>
+    <string name="notification_icon">notification icon</string>
+    <string name="stock_numbers">47,38662</string>
+</resources>
