@@ -9,6 +9,7 @@ import android.widget.Spinner
 import android.widget.Toast
 import com.example.androidpracticeproject.adapters.StockSpinnerAdapter
 import com.example.androidpracticeproject.data.StockData
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.INDICATOR_ANIMATION_MODE_ELASTIC
 
@@ -40,7 +41,11 @@ class MainActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                Toast.makeText(this@MainActivity, stockData[position].stockName, Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this@MainActivity, stockData[position].stockName, Toast.LENGTH_SHORT).show()
+                Snackbar.make(view!! ,R.string.picked_stock_snack_bar,Snackbar.LENGTH_SHORT)
+                    .setAction("Dismiss"){}
+                    .setActionTextColor(getColor(R.color.white))
+                    .show()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {

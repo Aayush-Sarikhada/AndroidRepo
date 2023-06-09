@@ -7,10 +7,12 @@
     <color name="border_stroke_color">#686666</color>
     <color name="tab_item_not_selected_text_color">#686666</color>
     <color name="tab_item_selected_text_color">#C6C9CD</color>
+    <color name="color_on_price_amount_view">#C6C9CD</color>
     <color name="heading_date_color">#818080</color>
     <color name="divider_gray_view_color">#686666</color>
     <color name="orange">#FFA500</color>
-    <color name="text_color_on_card_gray">#818080</color>
+    <color name="text_color_on_card">#818080</color>
+    <color name="divider_line_color">#818080</color>
 
 
 </resources>

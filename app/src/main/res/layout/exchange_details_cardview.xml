@@ -1,68 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="20dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:padding="@dimen/exchange_card_padding">
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/card_background_color"
+        app:cardCornerRadius="@dimen/exchange_card_corner_radius"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:cardCornerRadius="10dp"
-        app:cardBackgroundColor="@color/card_background_color">
+        app:layout_constraintTop_toTopOf="parent">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="@dimen/card_padding"
-            >
+            android:padding="@dimen/exchange_card_padding">
+
             <TextView
-                android:id="@+id/your_exchange"
+                android:id="@+id/you_exchange"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/you_exchange_label"
+                android:textColor="@color/text_color_on_card"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="@string/your_exchange"
-                android:textColor="@color/text_color_on_card_gray"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Spinner
                 android:id="@+id/exchange_spinner"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@id/your_exchange"
-                app:layout_constraintTop_toBottomOf="@id/your_exchange"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/exchange_spinner_margin_top"
+                tools:listitem="@layout/stock_spinner_item"
                 android:background="@drawable/exchange_background_view"
-                />
+                app:layout_constraintEnd_toStartOf="@id/divider_line_1"
+                app:layout_constraintStart_toStartOf="@id/you_exchange"
+                app:layout_constraintTop_toBottomOf="@id/you_exchange" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@id/exchange_spinner"
-                app:layout_constraintTop_toBottomOf="@id/exchange_spinner"
-                android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/arrow_up"
+                android:layout_marginTop="@dimen/exchange_stock_price_margin_top"
+                android:text="@string/exchange_stock_current_price"
                 android:textColor="@color/white"
-                android:text="$0.187200"/>
-            
+                app:drawableStartCompat="@drawable/arrow_up"
+                app:layout_constraintStart_toStartOf="@id/exchange_spinner"
+                app:layout_constraintTop_toBottomOf="@id/exchange_spinner" />
+
             <View
                 android:id="@+id/divider_line_1"
-                android:layout_width="50dp"
-                android:layout_height="1dp"
-                app:layout_constraintStart_toEndOf="@id/exchange_spinner"
-                app:layout_constraintTop_toTopOf="@id/exchange_spinner"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/divider_line_1_height"
+                android:layout_marginStart="@dimen/divider_line_1_margin_start"
+                android:background="@color/divider_line_color"
                 app:layout_constraintBottom_toBottomOf="@id/exchange_spinner"
-                android:layout_marginStart="10dp"
-                android:background="@color/text_color_on_card_gray"/>
+                app:layout_constraintEnd_toStartOf="@id/price_amount_view_1"
+                app:layout_constraintStart_toEndOf="@id/exchange_spinner"
+                app:layout_constraintTop_toTopOf="@id/exchange_spinner" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/price_amount_view_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="@dimen/price_amount_view_1_margin_start"
                 android:background="@drawable/exchange_background_view"
-                android:padding="10dp"
+                android:padding="@dimen/price_amount_view_1_padding"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/divider_line_1"
                 app:layout_constraintTop_toTopOf="@id/exchange_spinner">
 
@@ -70,7 +75,8 @@
                     android:id="@+id/exchange_minus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="1dp"
+                    android:contentDescription="@string/minus_icon_content_description"
+                    android:padding="@dimen/minus_img_padding"
                     android:src="@drawable/ic_minus"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -79,56 +85,61 @@
                     android:id="@+id/exchange_plus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:padding="1dp"
+                    android:layout_marginStart="@dimen/plus_img_margin_start"
+                    android:contentDescription="@string/plus_icon_content_description"
+                    android:padding="@dimen/plus_img_padding"
+                    android:src="@drawable/ic_plus"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/share_amount_1"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:src="@drawable/ic_plus" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/share_amount_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="@dimen/share_amount_1_margin_start"
                     android:text="@string/stock_numbers"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/share_amount_1_text_size"
                     android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/exchange_plus"
                     app:layout_constraintStart_toEndOf="@id/exchange_minus"
                     app:layout_constraintTop_toTopOf="@id/exchange_minus" />
+
                 <TextView
                     android:id="@+id/price_label_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/exchange_minus"
+                    android:layout_marginTop="@dimen/price_label_margin_top"
+                    android:text="@string/price"
+                    android:textColor="@color/color_on_price_amount_view"
+                    android:textSize="@dimen/price_label_text_size"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@id/exchange_minus"
-                    android:layout_marginTop="5dp"
-                    android:text="PRICE"
-                    android:textSize="12sp"
-                    android:textColor="@color/tab_item_selected_text_color"
-                    android:textStyle="bold"/>
+                    app:layout_constraintTop_toBottomOf="@id/exchange_minus" />
+
                 <TextView
                     android:id="@+id/price_amount_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/exchange_plus"
-                    app:layout_constraintEnd_toEndOf="@id/exchange_plus"
-                    android:layout_marginTop="5dp"
-                    android:textSize="12sp"
-                    android:text="~$ 6.022,84"
+                    android:layout_marginTop="@dimen/price_label_margin_top"
+                    android:text="@string/exchange_stock_price"
                     android:textColor="@color/tab_item_selected_text_color"
-                    android:textStyle="bold"/>
+                    android:textSize="@dimen/price_value_text_size"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/exchange_plus"
+                    app:layout_constraintTop_toBottomOf="@id/exchange_plus" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
                 android:id="@+id/card_divider_line_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/card_divider_line_margin_top"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/price_amount_view_1"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="25dp">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/price_amount_view_1">
 
                 <View
                     android:layout_width="@dimen/divider_white_view_width"
@@ -148,10 +159,10 @@
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/updown_arrow"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="10dp"
+                android:id="@+id/exchange_arrows"
+                android:layout_width="@dimen/exchange_arrow_width"
+                android:layout_height="@dimen/exchange_arrow_height"
+                android:layout_marginTop="@dimen/exchange_arrow_margin_top"
                 android:src="@drawable/ic_updown_arrow"
                 android:tint="@color/orange"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -162,11 +173,11 @@
                 android:id="@+id/card_divider_line_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/card_divider_line_margin_top"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/updown_arrow"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="10dp">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/exchange_arrows">
 
                 <View
                     android:layout_width="@dimen/divider_white_view_width"
@@ -189,48 +200,52 @@
                 android:id="@+id/your_receive_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/you_receive_margin_top"
+                android:text="@string/you_receive"
+                android:textColor="@color/text_color_on_card"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/card_divider_line_2"
-                android:text="You Receive"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/text_color_on_card_gray"/>
+                app:layout_constraintTop_toBottomOf="@id/card_divider_line_2" />
 
             <Spinner
                 android:id="@+id/receive_spinner"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/you_receive_spinner_margin_top"
+                android:background="@drawable/exchange_background_view"
                 app:layout_constraintStart_toStartOf="@id/your_receive_label"
                 app:layout_constraintTop_toBottomOf="@id/your_receive_label"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/exchange_background_view"
-                />
+                app:layout_constraintEnd_toStartOf="@id/divider_line_2"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@id/receive_spinner"
-                app:layout_constraintTop_toBottomOf="@id/receive_spinner"
-                android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/arrow_down"
+                android:layout_marginTop="@dimen/exchange_stock_price_margin_top"
+                android:text="@string/receive_stock_current_price"
                 android:textColor="@color/white"
-                android:text="$0.187200"/>
+                app:drawableLeftCompat="@drawable/arrow_down"
+                app:layout_constraintStart_toStartOf="@id/receive_spinner"
+                app:layout_constraintTop_toBottomOf="@id/receive_spinner" />
 
             <View
                 android:id="@+id/divider_line_2"
-                android:layout_width="50dp"
-                android:layout_height="1dp"
-                app:layout_constraintStart_toEndOf="@id/receive_spinner"
-                app:layout_constraintTop_toTopOf="@id/receive_spinner"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/divider_line_2_height"
+                android:layout_marginStart="@dimen/divider_line_2_margin_start"
+                android:background="@color/text_color_on_card"
                 app:layout_constraintBottom_toBottomOf="@id/receive_spinner"
-                android:layout_marginStart="10dp"
-                android:background="@color/text_color_on_card_gray"/>
+                app:layout_constraintEnd_toStartOf="@id/price_amount_view_2"
+                app:layout_constraintStart_toEndOf="@id/receive_spinner"
+                app:layout_constraintTop_toTopOf="@id/receive_spinner" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/price_amount_view_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="@dimen/price_amount_view_2_margin_start"
                 android:background="@drawable/exchange_background_view"
-                android:padding="10dp"
+                android:padding="@dimen/price_amount_view_2_padding"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/divider_line_2"
                 app:layout_constraintTop_toTopOf="@id/receive_spinner">
 
@@ -238,7 +253,7 @@
                     android:id="@+id/receive_minus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="1dp"
+                    android:padding="@dimen/minus_img_padding"
                     android:src="@drawable/ic_minus"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -247,55 +262,60 @@
                     android:id="@+id/receive_plus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:padding="1dp"
+                    android:layout_marginStart="@dimen/plus_img_margin_start"
+                    android:padding="@dimen/plus_img_padding"
+                    android:src="@drawable/ic_plus"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/share_amount_2"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:src="@drawable/ic_plus" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/share_amount_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="@dimen/share_amount_2_margin_start"
                     android:text="@string/stock_numbers"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/share_amount_2_text_size"
                     android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/receive_plus"
                     app:layout_constraintStart_toEndOf="@id/receive_minus"
                     app:layout_constraintTop_toTopOf="@id/receive_minus" />
+
                 <TextView
                     android:id="@+id/price_label_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/receive_minus"
+                    android:layout_marginTop="@dimen/price_label_margin_top"
+                    android:text="@string/price"
+                    android:textColor="@color/color_on_price_amount_view"
+                    android:textSize="@dimen/price_label_text_size"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@id/receive_minus"
-                    android:layout_marginTop="5dp"
-                    android:text="PRICE"
-                    android:textSize="12sp"
-                    android:textColor="@color/tab_item_selected_text_color"
-                    android:textStyle="bold"/>
+                    app:layout_constraintTop_toBottomOf="@id/receive_minus" />
+
                 <TextView
                     android:id="@+id/price_amount_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/receive_plus"
-                    app:layout_constraintEnd_toEndOf="@id/receive_plus"
-                    android:layout_marginTop="5dp"
-                    android:textSize="12sp"
-                    android:text="~$ 6.022,84"
+                    android:layout_marginTop="@dimen/price_label_margin_top"
+                    android:text="@string/receive_stock_price"
                     android:textColor="@color/tab_item_selected_text_color"
-                    android:textStyle="bold"/>
+                    android:textSize="@dimen/price_value_text_size"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/receive_plus"
+                    app:layout_constraintTop_toBottomOf="@id/receive_plus" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+
             <LinearLayout
                 android:id="@+id/card_divider_line_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/card_divider_line_3_margin_top"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/price_amount_view_2"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="20dp">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/price_amount_view_2">
 
                 <View
                     android:layout_width="@dimen/divider_white_view_width"
@@ -318,70 +338,37 @@
                 android:id="@+id/transaction_cost_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/transaction_cost_label_margin_top"
+                android:text="@string/transaction_cost"
+                android:textColor="@color/text_color_on_card"
+                app:layout_constraintEnd_toStartOf="@id/transaction_cost"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/card_divider_line_3"
-                android:layout_marginTop="10dp"
-                android:text="Transaction cost"
-                android:textColor="@color/text_color_on_card_gray"/>
+                app:layout_constraintTop_toBottomOf="@id/card_divider_line_3" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/transaction_cost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/transaction_cost_value"
+                android:textColor="@color/text_color_on_card"
+                app:layout_constraintEnd_toStartOf="@id/stock_detail"
                 app:layout_constraintStart_toEndOf="@id/transaction_cost_label"
-                app:layout_constraintTop_toTopOf="@id/transaction_cost_label"
-                android:layout_marginStart="55dp"
-                android:text="$32.80"
-                android:textColor="@color/text_color_on_card_gray"/>
+                app:layout_constraintTop_toTopOf="@id/transaction_cost_label" />
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/stock_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ABC1"
+                android:drawableStart="@drawable/ic_exchange_icon"
+                android:drawablePadding="@dimen/exchange_stock_drawable_padding"
                 android:drawableTint="@color/orange"
-                android:drawablePadding="3dp"
+                android:text="@string/exchanged_stock_detail"
                 android:textColor="@color/orange"
-                android:drawableLeft="@drawable/ic_exchange_icon"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/transaction_cost"/>
+                app:layout_constraintStart_toEndOf="@id/transaction_cost"
+                app:layout_constraintTop_toTopOf="@id/transaction_cost" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-    <!--            <LinearLayout-->
-    <!--                android:id="@+id/exchange_spinner"-->
-    <!--                android:layout_width="wrap_content"-->
-    <!--                android:layout_height="wrap_content"-->
-    <!--                app:layout_constraintTop_toBottomOf="@id/your_exchange"-->
-    <!--                app:layout_constraintStart_toStartOf="@id/your_exchange"-->
-    <!--                android:background="@drawable/exchange_background_view"-->
-    <!--                android:orientation="horizontal"-->
-    <!--                android:padding="10dp"-->
-    <!--                android:layout_marginTop="10dp">-->
-    <!--                <ImageView-->
-    <!--                    android:layout_width="wrap_content"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:src="@drawable/ic_exchange_icon"-->
-    <!--                    app:tint="@color/white" />-->
-    <!--                <Space-->
-    <!--                    android:layout_width="10dp"-->
-    <!--                    android:layout_height="1dp"/>-->
-    <!--                <TextView-->
-    <!--                    android:layout_width="wrap_content"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:text="@string/exchange_avax"-->
-    <!--                    android:textStyle="bold"-->
-    <!--                    android:textSize="18sp"-->
-    <!--                    android:textColor="@color/white"/>-->
-    <!--                <Space-->
-    <!--                    android:layout_width="5dp"-->
-    <!--                    android:layout_height="1dp"/>-->
-    <!--                <ImageView-->
-    <!--                    android:layout_width="wrap_content"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:src="@drawable/baseline_keyboard_arrow_down"/>-->
-    <!--            </LinearLayout>-->
