@@ -1,4 +1,4 @@
-package com.example.androidpracticeproject
+package com.example.androidpracticeproject.uicomponentsPractice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,9 +6,9 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.Spinner
-import android.widget.Toast
-import com.example.androidpracticeproject.adapters.StockSpinnerAdapter
-import com.example.androidpracticeproject.data.StockData
+import com.example.androidpracticeproject.R
+import com.example.androidpracticeproject.uicomponentsPractice.adapters.StockSpinnerAdapter
+import com.example.androidpracticeproject.uicomponentsPractice.data.StockData
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                 id: Long
             ) {
 //              Toast.makeText(this@MainActivity, stockData[position].stockName, Toast.LENGTH_SHORT).show()
-                Snackbar.make(view!! ,R.string.picked_stock_snack_bar,Snackbar.LENGTH_SHORT)
+                Snackbar.make(view!! , R.string.picked_stock_snack_bar,Snackbar.LENGTH_SHORT)
                     .setAction("Dismiss"){}
                     .setActionTextColor(getColor(R.color.white))
                     .show()

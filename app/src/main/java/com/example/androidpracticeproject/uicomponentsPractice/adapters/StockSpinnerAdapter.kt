@@ -1,4 +1,4 @@
-package com.example.androidpracticeproject.adapters
+package com.example.androidpracticeproject.uicomponentsPractice.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.example.androidpracticeproject.R
-import com.example.androidpracticeproject.data.StockData
+import com.example.androidpracticeproject.uicomponentsPractice.data.StockData
 
 class StockSpinnerAdapter(private val context: Context, private val dataList: List<StockData>): ArrayAdapter<StockData>(context,0, dataList) {
 

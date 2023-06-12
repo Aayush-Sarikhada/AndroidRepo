@@ -35,4 +35,12 @@
     <string name="wallet_label">Wallet</string>
     <string name="exchange_label">Exchange</string>
     <string name="fab_button_for_exchange">fab button for exchange</string>
+    <string name="nft_bazaar">NFT Bazaar</string>
+    <string name="full_name">Full Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="password_minimum_8_characters">password (minimum 8 characters)</string>
+    <string name="by_signing_up_you_accept_our">By signing up, you accept our</string>
+    <string name="terms_and_conditions">Terms and conditions</string>
+    <string name="or">OR</string>
+    <string name="continue_with_google">Continue With Google</string>
 </resources>

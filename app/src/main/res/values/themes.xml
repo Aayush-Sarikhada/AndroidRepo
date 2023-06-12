@@ -7,7 +7,38 @@
     </style>
 
     <style name="Theme.AndroidPracticeProject" parent="Base.Theme.AndroidPracticeProject" />
+
     <style name="spinnerItemStyle">
         <item name="android:colorBackground">@android:color/transparent</item>
     </style>
+
+<!--    Styles for NFT app-->
+    <style name="Base.Theme.NFTBazaar" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/black</item>
+        <item name="colorPrimary">#666666</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <style name="app_title_style" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textColor">@drawable/zanab_app_name_gradient</item>
+    </style>
+
+<!--    button style    -->
+    <style name="button_style" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/black</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="background">@color/white</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
+
+<!--    edit text field style   -->
+    <style name="editText_style" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxCornerRadiusTopStart">8dp</item>
+    </style>
+
+
 </resources>
