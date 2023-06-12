@@ -9,6 +9,7 @@ import android.widget.Spinner
 import android.widget.Toast
 import com.example.androidpracticeproject.adapters.StockSpinnerAdapter
 import com.example.androidpracticeproject.data.StockData
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.INDICATOR_ANIMATION_MODE_ELASTIC
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var stockExchangeSpinner: Spinner
     lateinit var stockReceiveSpinner: Spinner
     lateinit var stockData: List<StockData>
+    lateinit var bottomNavigationView: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,22 +28,28 @@ class MainActivity : AppCompatActivity() {
         tabLayout = findViewById(R.id.tab_bar_layout)
         stockExchangeSpinner = findViewById(R.id.exchange_spinner)
         stockReceiveSpinner = findViewById(R.id.receive_spinner)
+        bottomNavigationView = findViewById(R.id.bottom_navigation_view)
         stockData = getListOfStockData()
+        setUpBottomNavigation()
         setUpTabLayout()
         setupSpinner()
+    }
+
+    private fun setUpBottomNavigation() {
+        bottomNavigationView.background = null
     }
 
     private fun setupSpinner() {
         stockExchangeSpinner.adapter = StockSpinnerAdapter(this,stockData)
         stockReceiveSpinner.adapter = StockSpinnerAdapter(this,stockData.shuffled())
-        val clickListener = object: OnItemSelectedListener {
+        var clickListener = object: OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
                 position: Int,
                 id: Long
             ) {
-//                Toast.makeText(this@MainActivity, stockData[position].stockName, Toast.LENGTH_SHORT).show()
+//              Toast.makeText(this@MainActivity, stockData[position].stockName, Toast.LENGTH_SHORT).show()
                 Snackbar.make(view!! ,R.string.picked_stock_snack_bar,Snackbar.LENGTH_SHORT)
                     .setAction("Dismiss"){}
                     .setActionTextColor(getColor(R.color.white))

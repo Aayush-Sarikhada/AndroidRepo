@@ -78,6 +78,7 @@
                     android:contentDescription="@string/minus_icon_content_description"
                     android:padding="@dimen/minus_img_padding"
                     android:src="@drawable/ic_minus"
+                    app:layout_constraintEnd_toStartOf="@id/share_amount_1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 

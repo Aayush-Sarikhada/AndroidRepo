@@ -9,11 +9,12 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="?attr/actionBarSize"
         android:fillViewport="true">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@color/backgroundColor"
             android:orientation="vertical"
             tools:context=".MainActivity">
@@ -183,4 +184,37 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </ScrollView>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:backgroundTint="@color/card_background_color"
+        app:fabAlignmentMode="center"
+        app:fabCradleMargin="10dp"
+        app:contentInsetEnd="30dp"
+        app:contentInsetStart="30dp"
+        app:elevation="0dp"
+        app:fabAnimationMode="scale"
+        app:fabCradleRoundedCornerRadius="25dp"
+        >
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:menu="@menu/navigation_menu"
+            android:background="@android:color/transparent"/>
+    </com.google.android.material.bottomappbar.BottomAppBar>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_exchange_icon"
+        app:backgroundTint="@color/text_color_on_card"
+        app:elevation="5dp"
+        app:fabSize="normal"
+        app:layout_anchor="@id/bottom_app_bar"
+        android:contentDescription="@string/fab_button_for_exchange" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

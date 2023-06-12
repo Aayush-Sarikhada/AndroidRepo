@@ -31,4 +31,8 @@
     <string name="exchange_for">Exchange for</string>
     <string name="total_stock">1.497,68</string>
     <string name="stock_name_total">LINK</string>
+    <string name="market_label">Market</string>
+    <string name="wallet_label">Wallet</string>
+    <string name="exchange_label">Exchange</string>
+    <string name="fab_button_for_exchange">fab button for exchange</string>
 </resources>
