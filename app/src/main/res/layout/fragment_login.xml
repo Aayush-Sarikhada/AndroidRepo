@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
-    tools:context=".navigationComponentsPractice.authentication.LoginFragment">
+    tools:context=".fragments.authentication.LoginFragment">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/app_name_logo"
@@ -30,7 +30,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_email"
-        style="@style/editText_style"
+        style="@style/Theme.app.EditTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -47,7 +47,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_password"
-        style="@style/editText_style"
+        style="@style/Theme.app.EditTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"

@@ -1,4 +1,4 @@
-package com.example.androidpracticeproject.navigationComponentsPractice.authentication
+package com.example.androidpracticeproject.fragments.authentication
 
 import android.os.Bundle
 import android.view.LayoutInflater

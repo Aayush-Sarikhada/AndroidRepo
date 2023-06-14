@@ -1,4 +1,4 @@
-package com.example.androidpracticeproject.navigationComponentsPractice.authentication
+package com.example.androidpracticeproject.components.authentication
 
 import android.app.Dialog
 import android.content.Context
@@ -50,6 +50,7 @@ class OTPverificationDialog(private val context: Context, private val mobileNumb
 
                         2 -> {
                             selectedETPosition = 3
+
                             showKeyboard(otpEt4)
                         }
                     }

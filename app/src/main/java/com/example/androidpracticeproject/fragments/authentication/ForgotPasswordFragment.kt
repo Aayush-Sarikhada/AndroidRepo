@@ -1,4 +1,4 @@
-package com.example.androidpracticeproject.navigationComponentsPractice.authentication
+package com.example.androidpracticeproject.fragments.authentication
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import com.example.androidpracticeproject.R
 import com.example.androidpracticeproject.databinding.FragmentForgotPasswordBinding
+import com.example.androidpracticeproject.components.authentication.OTPverificationDialog
 
 class ForgotPasswordFragment : Fragment() {
 

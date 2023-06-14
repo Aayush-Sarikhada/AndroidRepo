@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/authentication_graph"
-    app:startDestination="@id/signupFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/signupFragment"
-        android:name="com.example.androidpracticeproject.navigationComponentsPractice.authentication.SignupFragment"
+        android:name="com.example.androidpracticeproject.fragments.authentication.SignupFragment"
         android:label="SignupFragment" >
         <action
             android:id="@+id/action_signupFragment_to_loginFragment"
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.androidpracticeproject.navigationComponentsPractice.authentication.LoginFragment"
+        android:name="com.example.androidpracticeproject.fragments.authentication.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.example.androidpracticeproject.navigationComponentsPractice.authentication.ForgotPasswordFragment"
+        android:name="com.example.androidpracticeproject.fragments.authentication.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" >
         <action

@@ -57,9 +57,16 @@
     <string name="we_have_sent_verification_code_to">We have sent verification code to.</string>
     <string name="otp_verification">OTP Verification</string>
     <string name="dummy_mobile_number">+91 6898898745</string>
-    <string name="resend_code">resend code</string>
+    <string name="resend_code">Resend code</string>
     <string name="verify">Verify</string>
     <string name="send">Send</string>
     <string name="sign_up">Sign up</string>
     <string name="select_your_gender">Select your gender</string>
+    <string name="search">Search</string>
+    <string name="notifications">Notifications</string>
+    <string name="collections">Collections</string>
+    <string name="nft_bored_bunny">NFT Bored Bunny</string>
+    <string name="_0_18_eth">0.18 ETH</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="dour_darcel">\@Dour Darcel</string>
 </resources>

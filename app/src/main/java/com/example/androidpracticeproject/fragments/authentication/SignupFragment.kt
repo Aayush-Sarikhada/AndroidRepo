@@ -1,6 +1,5 @@
-package com.example.androidpracticeproject.navigationComponentsPractice.authentication
+package com.example.androidpracticeproject.fragments.authentication
 
-import android.content.res.Resources
 import android.graphics.LinearGradient
 import android.graphics.Shader
 import android.os.Bundle
@@ -10,10 +9,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
-import com.example.androidpracticeproject.R
 import com.example.androidpracticeproject.databinding.FragmentSignupBinding
+
 
 class SignupFragment : Fragment() {
 
@@ -40,6 +38,10 @@ class SignupFragment : Fragment() {
             view.findNavController().navigate(SignupFragmentDirections.actionSignupFragmentToLoginFragment())
         }
         tvAppTitleLogo = binding.appNameLogo
+        colorAppTitleLogo()
+    }
+
+    private fun colorAppTitleLogo() {
         val textShader: Shader = LinearGradient(
             0f,
             0f,
@@ -51,6 +53,5 @@ class SignupFragment : Fragment() {
         )
         tvAppTitleLogo.paint.shader = textShader
     }
-
 
 }
