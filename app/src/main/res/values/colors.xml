@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="primary">#705FAA</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="backgroundColor">#1D2123</color>
@@ -17,5 +18,8 @@
     <color name="back_to_sign_in_color">#787876</color>
     <color name="nft_collection_price_color">#25D76C</color>
     <color name="button_background_color">#705FAA</color>
+
+    <color name="redColor">#FF3D00</color>
+    <color name="purpleColor">#705FAA</color>
 
 </resources>

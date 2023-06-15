@@ -16,6 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@null">
         <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/top_app_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
             app:menu="@menu/home_menu"
@@ -26,9 +27,11 @@
 
    <androidx.fragment.app.FragmentContainerView
        android:id="@+id/home_fragment"
-       android:name="com.example.androidpracticeproject.fragments.home.HomeScreenFragment"
+       android:name="androidx.navigation.fragment.NavHostFragment"
        android:layout_width="match_parent"
        android:layout_height="0dp"
+       app:defaultNavHost="true"
+       app:navGraph="@navigation/home_graph"
        app:layout_constraintTop_toBottomOf="@id/top_app_bar"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintEnd_toEndOf="parent"

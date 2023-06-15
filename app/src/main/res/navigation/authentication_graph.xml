@@ -8,12 +8,7 @@
     <fragment
         android:id="@+id/signupFragment"
         android:name="com.example.androidpracticeproject.fragments.authentication.SignupFragment"
-        android:label="SignupFragment" >
-        <action
-            android:id="@+id/action_signupFragment_to_loginFragment"
-            app:destination="@id/loginFragment"
-            app:launchSingleTop="true" />
-    </fragment>
+        android:label="SignupFragment" />
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.androidpracticeproject.fragments.authentication.LoginFragment"
@@ -30,10 +25,5 @@
         android:id="@+id/forgotPasswordFragment"
         android:name="com.example.androidpracticeproject.fragments.authentication.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
-        tools:layout="@layout/fragment_forgot_password" >
-        <action
-            android:id="@+id/action_forgotPasswordFragment_to_signupFragment"
-            app:destination="@id/signupFragment"
-            app:launchSingleTop="true" />
-    </fragment>
+        tools:layout="@layout/fragment_forgot_password" />
 </navigation>

@@ -18,7 +18,6 @@ class OTPverificationDialog(private val context: Context, private val mobileNumb
     Dialog(context) {
 
     private var TAG = "OTP_DIALOG"
-
     private lateinit var otpEt1: EditText
     private lateinit var otpEt2: EditText
     private lateinit var otpEt3: EditText

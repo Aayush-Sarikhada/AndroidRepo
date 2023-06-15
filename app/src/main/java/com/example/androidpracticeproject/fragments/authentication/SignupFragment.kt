@@ -9,24 +9,23 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
+import com.example.androidpracticeproject.R
 import com.example.androidpracticeproject.databinding.FragmentSignupBinding
 
 
 class SignupFragment : Fragment() {
 
     private lateinit var binding: FragmentSignupBinding
-
     private lateinit var btnLogin: Button
     private lateinit var tvAppTitleLogo: TextView
-
-    private val redColor = 0xFFFF3D00
-    private val purpleColor = 0xFF705FAA
+    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSignupBinding.inflate(inflater)
         return binding.root
     }
@@ -34,8 +33,9 @@ class SignupFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btnLogin = binding.loginButton
+        navController = findNavController()
         btnLogin.setOnClickListener {
-            view.findNavController().navigate(SignupFragmentDirections.actionSignupFragmentToLoginFragment())
+            navController.popBackStack()
         }
         tvAppTitleLogo = binding.appNameLogo
         colorAppTitleLogo()
@@ -47,7 +47,10 @@ class SignupFragment : Fragment() {
             0f,
             0f,
             tvAppTitleLogo.paint.textSize,
-            intArrayOf(redColor.toInt(), purpleColor.toInt()),
+            intArrayOf(
+                resources.getColor(R.color.redColor, null),
+                resources.getColor(R.color.purpleColor, null)
+            ),
             floatArrayOf(0f, 1f),
             Shader.TileMode.CLAMP
         )

@@ -4,28 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.home.HomeScreenFragment">
+    tools:context=".fragments.home.NftCollectionFragment">
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/nft_collection_heading"
+        android:id="@+id/nft_heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/collections"
         android:fontFamily="@font/inter_font"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+        android:text="@string/nft_collection_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/nft_collections_recycler_view"
+        android:id="@+id/nft_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nft_collection_heading"
+        android:orientation="vertical"
+        tools:listitem="@layout/view_nft_card"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/view_nft_collection_card"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nft_heading" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

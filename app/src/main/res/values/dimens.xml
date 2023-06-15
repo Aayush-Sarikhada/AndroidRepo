@@ -23,12 +23,10 @@
     <dimen name="divider_white_view_height">1dp</dimen>
     <dimen name="divider_gray_view_height">1dp</dimen>
 
-
     <dimen name="card_radius">10dp</dimen>
     <dimen name="exchange_selector_card_radius">8dp</dimen>
     <dimen name="card_divider_line_margin_top">25dp</dimen>
     <dimen name="card_divider_line_3_margin_top">20dp</dimen>
-
 
 <!-- stocks spinner view row dimension -->
     <dimen name="padding_stock_spinner_row">5dp</dimen>
@@ -83,8 +81,5 @@
     <dimen name="exchange_for_btn_margin_horizontal">20dp</dimen>
     <dimen name="exchange_for_text_size">16sp</dimen>
     <dimen name="exchange_for_text_padding">5dp</dimen>
-
-
-
 
 </resources>

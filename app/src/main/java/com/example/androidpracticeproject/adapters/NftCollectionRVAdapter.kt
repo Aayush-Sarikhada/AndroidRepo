@@ -3,7 +3,6 @@ package com.example.androidpracticeproject.adapters
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
@@ -15,11 +14,11 @@ import com.example.androidpracticeproject.R
 import com.example.androidpracticeproject.models.home.NFTCollectionDataModel
 import com.example.androidpracticeproject.utils.ClickListener
 
-class NFTAdapter(
+class NftCollectionRVAdapter(
     private val context: Context,
     private val dataList: List<NFTCollectionDataModel>,
     private val onClickListener: ClickListener
-) : RecyclerView.Adapter<NFTAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<NftCollectionRVAdapter.ViewHolder>() {
 
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val imgFirstNFT: ImageView = view.findViewById(R.id.first_nft_img)
@@ -33,7 +32,7 @@ class NFTAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.nft_collection_card, parent, false)
+            .inflate(R.layout.view_nft_collection_card, parent, false)
         return ViewHolder(view)
     }
 

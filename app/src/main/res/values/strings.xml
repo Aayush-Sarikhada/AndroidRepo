@@ -69,4 +69,13 @@
     <string name="_0_18_eth">0.18 ETH</string>
     <string name="buy_now">Buy Now</string>
     <string name="dour_darcel">\@Dour Darcel</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="password">Password</string>
+    <string name="log_out">Log out</string>
+    <string name="nft_collection_name">NFT Collection Name</string>
+    <string name="nft_name">NFT Name</string>
+    <string name="_1001">#1001</string>
+    <string name="price_label">Price:</string>
+    <string name="nft_id_dummy">#1001</string>
 </resources>
