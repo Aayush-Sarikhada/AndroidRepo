@@ -1,6 +1,7 @@
 package com.example.androidpracticeproject.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,16 +32,22 @@ class NftCollectionRVAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        Log.d("RecyclerViewAdapter","OnCreateViewHolder")
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.view_nft_collection_card, parent, false)
-        return ViewHolder(view)
+        val vh = ViewHolder(view)
+//        Log.d("RecyclerView", "${vh.adapterPosition}")
+        return vh
     }
 
     override fun getItemCount(): Int {
+        Log.d("RecyclerViewAdapter","getItemCount")
         return dataList.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
+        Log.d("RecyclerViewAdapter","OnBindViewHolder, position: $position")
         holder.imgFirstNFT.setImageDrawable(
             ResourcesCompat.getDrawable(
                 context.resources,
