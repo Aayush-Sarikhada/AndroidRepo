@@ -4,7 +4,13 @@
         <item name="android:colorBackground">@android:color/transparent</item>
     </style>
 
-    <!--    Styles for NFT app-->
+    <!--    Theme for RecyclerView practice app-->
+    <style name="Base.Theme.ArithmeticRVApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <!--    Theme for NFT app-->
     <style name="Base.Theme.NFTBazaar" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:statusBarColor">#3EBFAA</item>
         <item name="colorPrimary">@color/primary</item>

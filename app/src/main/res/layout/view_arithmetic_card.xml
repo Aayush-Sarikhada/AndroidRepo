@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="16dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/img_delete_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:src="@drawable/baseline_delete_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_first_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toStartOf="@id/tv_multiply"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_first_number"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/first_number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_multiply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/multiply_icon"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/til_first_number"
+            app:layout_constraintEnd_toStartOf="@id/til_second_number"
+            app:layout_constraintStart_toEndOf="@id/til_first_number"
+            app:layout_constraintTop_toTopOf="@id/til_first_number" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_second_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_multiply"
+            app:layout_constraintTop_toTopOf="@id/til_first_number">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_second_number"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/second_number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/plus_icon"
+            android:textSize="40sp"
+            app:layout_constraintStart_toStartOf="@id/tv_multiply"
+            app:layout_constraintEnd_toEndOf="@id/tv_multiply"
+            app:layout_constraintTop_toBottomOf="@id/tv_multiply"
+            android:layout_marginTop="8dp"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/orange"
+            app:reverseLayout="true"
+            tools:listitem="@layout/view_spinner_number"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="@id/til_first_number"
+            app:layout_constraintBottom_toBottomOf="@id/btn_add_more_spinner"
+            app:layout_constraintTop_toBottomOf="@id/tv_add"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_add_more_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/rv_spinner"
+            app:layout_constraintBottom_toBottomOf="@id/rv_spinner"
+            android:text="@string/add_more"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_images"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/rv_spinner"
+            app:layout_constraintStart_toStartOf="@id/rv_spinner"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toStartOf="@id/btn_add_more_images"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_marginTop="16dp"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_add_more_images"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintStart_toEndOf="@id/rv_images"
+            app:layout_constraintBottom_toBottomOf="@id/rv_images"
+            android:contentDescription="@string/add_more_images"
+            android:text="@string/add_more"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_total_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/rv_images"
+            app:layout_constraintTop_toBottomOf="@id/rv_images"
+            android:textSize="20sp"
+            android:layout_marginTop="8dp"
+            android:text="@string/total"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

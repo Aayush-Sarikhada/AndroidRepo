@@ -78,4 +78,23 @@
     <string name="_1001">#1001</string>
     <string name="price_label">Price:</string>
     <string name="nft_id_dummy">#1001</string>
+    <string name="add_more">Add More</string>
+    <string name="plus_icon">+</string>
+    <string name="first_number">First number</string>
+    <string name="multiply_icon">X</string>
+    <string name="second_number">Second number</string>
+    <string name="total">Total:</string>
+    <string name="add_more_images">add more images</string>
+
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+
 </resources>
