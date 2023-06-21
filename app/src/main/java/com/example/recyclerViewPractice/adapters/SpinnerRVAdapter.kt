@@ -16,7 +16,7 @@ import com.example.recyclerViewPractice.models.SpinnerStateDataModel
 
 class SpinnerRVAdapter(
     val context: Context,
-    private val dataList: List<SpinnerStateDataModel>,
+    val dataList: List<SpinnerStateDataModel>,
     private val onDeleteSpinnerButtonClicked: (Int) -> Unit,
     private val onItemSelected: (Int, Int) -> Unit
 ) :
@@ -29,6 +29,22 @@ class SpinnerRVAdapter(
         init {
             btnDeleteSpinner.setOnClickListener {
                 onDeleteSpinnerButtonClicked(adapterPosition)
+            }
+
+            spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
+
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    dataList[adapterPosition].spinnerValue = position
+                    onItemSelected(dataList[adapterPosition].spinnerValue, adapterPosition)
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {}
+
             }
         }
     }
@@ -48,24 +64,11 @@ class SpinnerRVAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.apply {
             btnDeleteSpinner.isVisible = position != 0
-            spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-                ) {
-                    dataList[adapterPosition].spinnerValue = position
-                    onItemSelected(dataList[adapterPosition].spinnerValue, adapterPosition)
-                    Log.d("SPINNER_RV", "SELECTED: ${dataList[adapterPosition].spinnerValue}")
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>?) {}
-
-            }
             spinner.isSelected = dataList[position].spinnerValue != 0
             if (spinner.isSelected) {
                 spinner.setSelection(dataList[position].spinnerValue - 1)
+            } else {
+                spinner.setSelection(0)
             }
         }
     }

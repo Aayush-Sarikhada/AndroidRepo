@@ -4,24 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingHorizontal="12dp"
     tools:context="com.example.recyclerViewPractice.views.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:nestedScrollingEnabled="true"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:padding="10dp"
         />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_add_more_arithmetic_card"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/add_more"
-        app:layout_constraintEnd_toEndOf="@id/recycler_view"
-        app:layout_constraintTop_toBottomOf="@id/recycler_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
