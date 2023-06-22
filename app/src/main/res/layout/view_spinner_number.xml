@@ -3,14 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="4dp">
+    android:layout_margin="@dimen/margin_view_spinner">
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/btn_delete_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="8dp"
+            android:padding="@dimen/padding_icon_medium"
             android:contentDescription="@string/delete_this_spinner"
             android:background="@android:color/transparent"
             android:src="@drawable/baseline_delete_24"
@@ -20,7 +19,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="38dp"
+        android:layout_marginEnd="@dimen/margin_end_spinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

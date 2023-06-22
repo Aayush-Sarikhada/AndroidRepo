@@ -2,25 +2,25 @@ package com.example.recyclerViewPractice.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidpracticeproject.R
 import com.example.androidpracticeproject.databinding.ViewArithmeticCardBinding
-import com.example.recyclerViewPractice.Constants
 import com.example.recyclerViewPractice.PayloadTypes
 import com.example.recyclerViewPractice.models.ArithmeticCardStateDataModel
 import com.example.recyclerViewPractice.models.SpinnerStateDataModel
+import com.example.recyclerViewPractice.utils.ArithmeticCardDiffUtil
 import com.example.recyclerViewPractice.utils.Utils
 import com.google.android.material.divider.MaterialDivider
 import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
 
 class ArithmeticCardRVAdapter(
     private val context: Context,
@@ -33,8 +33,8 @@ class ArithmeticCardRVAdapter(
         RecyclerView.ViewHolder(binding.root) {
         private val btnAddMoreSpinners: Button = binding.btnAddMoreSpinner
         private val btnAddMoreImage: Button = binding.btnAddMoreImages
-        private val etFirstNumber: TextInputEditText = binding.etFirstNumber
-        private val etSecondNumber: TextInputEditText = binding.etSecondNumber
+        val etFirstNumber: TextInputEditText = binding.etFirstNumber
+        val etSecondNumber: TextInputEditText = binding.etSecondNumber
         val btnDelete: ImageButton = binding.imgDeleteCard
         val rvForSpinner: RecyclerView = binding.rvSpinner
         val rvForImages: RecyclerView = binding.rvImages
@@ -44,24 +44,30 @@ class ArithmeticCardRVAdapter(
 
         init {
 
+            tvTotal.isFocusable = true
+
             btnDelete.setOnClickListener {
                 onDeleteBtnClickListener(adapterPosition)
             }
 
             etFirstNumber.addTextChangedListener {
-                it?.let {text ->
-                    dataList[adapterPosition].strFirstEditTextValue =
-                        if (text.isEmpty()) "0" else text.toString()
+                if (etFirstNumber.hasFocus()) {
+                    it?.let { text ->
+                        dataList[adapterPosition].strFirstEditTextValue =
+                            if (text.isEmpty()) "0" else text.toString()
+                    }
+                    notifyItemChanged(adapterPosition, PayloadTypes.STR_TOTAL)
                 }
-                notifyItemChanged(adapterPosition, PayloadTypes.STR_TOTAL)
             }
 
             etSecondNumber.addTextChangedListener {
-                it?.let {
-                    dataList[adapterPosition].strSecondEditTextValue =
-                        if (it.isEmpty()) "0" else it.toString()
+                if (etSecondNumber.hasFocus()) {
+                    it?.let {
+                        dataList[adapterPosition].strSecondEditTextValue =
+                            if (it.isEmpty()) "0" else it.toString()
+                    }
+                    notifyItemChanged(adapterPosition, PayloadTypes.STR_TOTAL)
                 }
-                notifyItemChanged(adapterPosition, PayloadTypes.STR_TOTAL)
             }
 
             btnAddMoreImage.setOnClickListener {
@@ -103,30 +109,36 @@ class ArithmeticCardRVAdapter(
             dividerBottom.isVisible = position == dataList.size - 1
             btnAddMoreCards.isVisible = position == dataList.size - 1
             val currentCard = dataList[position]
-            holder.tvTotal.text = "Total: ${if(currentCard.total.toString() == "0") "" else currentCard.total }"
+            etFirstNumber.setText(if (currentCard.strFirstEditTextValue == "0") "" else currentCard.strFirstEditTextValue)
+            etSecondNumber.setText(if (currentCard.strSecondEditTextValue == "0") "" else currentCard.strSecondEditTextValue)
+            tvTotal.text =
+                "Total: ${if (currentCard.total.toString() == "0") "" else currentCard.total}"
             binding.arithmeticCard = dataList[adapterPosition]
 
             rvForSpinner.adapter = SpinnerRVAdapter(
                 context,
-                dataList[position].spinnerStateList,
+                dataList[adapterPosition].spinnerStateList,
                 onDeleteSpinnerButtonClicked = { spinnerPosition ->
-                    dataList[position].spinnerStateList.removeAt(spinnerPosition)
+                    dataList[adapterPosition].spinnerStateList.removeAt(spinnerPosition)
                     rvForSpinner.adapter?.notifyItemRemoved(spinnerPosition)
-                    dataList[position].updateTotal()
-                    holder.tvTotal.text = "Total: ${if(currentCard.total.toString() == "0") "" else currentCard.total }"
+                    dataList[adapterPosition].updateTotal()
+                    holder.tvTotal.text =
+                        "Total: ${if (currentCard.total.toString() == "0") "" else currentCard.total}"
                 }
             ) { selectedSpinnerValue, selectedSpinnerPos ->
-                dataList[position].spinnerStateList[selectedSpinnerPos].spinnerValue =
+                dataList[adapterPosition].spinnerStateList[selectedSpinnerPos].spinnerValue =
                     selectedSpinnerValue
-                dataList[position].updateTotal()
-                holder.tvTotal.text = "Total: ${if(currentCard.total.toString() == "0") "" else currentCard.total }"
+                dataList[adapterPosition].updateTotal()
+                holder.tvTotal.text =
+                    "Total: ${if (currentCard.total.toString() == "0") "" else currentCard.total}"
             }
 
             rvForImages.adapter = ImagesRVAdapter(
                 context,
-                dataList[position].imagesIDsArray
+                dataList[adapterPosition].imagesIDsArray
             ) { imgPosition ->
-                dataList[position].imagesIDsArray.removeAt(imgPosition)
+                Log.d("RV", "HEllo: $position")
+                dataList[adapterPosition].imagesIDsArray.removeAt(imgPosition)
                 rvForImages.adapter?.notifyItemRemoved(imgPosition)
             }
 
@@ -140,20 +152,25 @@ class ArithmeticCardRVAdapter(
                 PayloadTypes.STR_TOTAL -> {
                     dataList[position].updateTotal()
                     val currentCard = dataList[position]
-                    val total = currentCard.total
-                    val spinTotal = currentCard.totalSpinnerRV
-                    holder.tvTotal.text = "Total: ${if(currentCard.total.toString() == "0") "" else currentCard.total }"
+                    holder.tvTotal.text =
+                        "Total: ${if (currentCard.total.toString() == "0") "" else currentCard.total}"
                 }
 
                 PayloadTypes.BTN_ADD_MORE_CARDS -> {
                     holder.dividerBottom.visibility = Button.VISIBLE
                     holder.btnAddMoreCards.visibility = Button.VISIBLE
                 }
-
             }
             return
         }
         super.onBindViewHolder(holder, position, payloads)
+    }
+
+    fun setData(newDataList: List<ArithmeticCardStateDataModel>) {
+        val diffUtil = ArithmeticCardDiffUtil(dataList, newDataList)
+        val diffResult = DiffUtil.calculateDiff(diffUtil, true)
+//        dataList =
+        diffResult.dispatchUpdatesTo(this)
     }
 
 }

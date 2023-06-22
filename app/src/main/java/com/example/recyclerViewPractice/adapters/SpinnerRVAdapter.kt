@@ -22,6 +22,8 @@ class SpinnerRVAdapter(
 ) :
     RecyclerView.Adapter<SpinnerRVAdapter.ViewHolder>() {
 
+    private val spinnerRangeList = (1..100).toList()
+
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val spinner: Spinner = view.findViewById(R.id.spinner)
         val btnDeleteSpinner: ImageButton = view.findViewById(R.id.btn_delete_spinner)
@@ -39,7 +41,7 @@ class SpinnerRVAdapter(
                     position: Int,
                     id: Long
                 ) {
-                    dataList[adapterPosition].spinnerValue = position
+                    dataList[adapterPosition].spinnerValue = spinnerRangeList[position]
                     onItemSelected(dataList[adapterPosition].spinnerValue, adapterPosition)
                 }
 
@@ -53,7 +55,7 @@ class SpinnerRVAdapter(
         val view = LayoutInflater.from(context).inflate(R.layout.view_spinner_number, parent, false)
         val vh = ViewHolder(view)
         vh.spinner.adapter =
-            ArrayAdapter(context, R.layout.support_simple_spinner_dropdown_item, (0..100).toList())
+            ArrayAdapter(context, R.layout.support_simple_spinner_dropdown_item, spinnerRangeList)
         return ViewHolder(view)
     }
 
@@ -66,7 +68,7 @@ class SpinnerRVAdapter(
             btnDeleteSpinner.isVisible = position != 0
             spinner.isSelected = dataList[position].spinnerValue != 0
             if (spinner.isSelected) {
-                spinner.setSelection(dataList[position].spinnerValue - 1)
+                spinner.setSelection(dataList[position].spinnerValue)
             } else {
                 spinner.setSelection(0)
             }

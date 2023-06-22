@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidPracticeProject</string>
+    <string name="app_name">Arithma</string>
     <string name="toolbarTitle">GEMINI</string>
     <string name="tablayout_item_limit">Limit</string>
     <string name="tablayout_item_market">Market</string>
