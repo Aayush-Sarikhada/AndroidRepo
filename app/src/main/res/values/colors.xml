@@ -1,10 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
+<!--    <color name="purple_200">#FFBB86FC</color>-->
+<!--    <color name="purple_500">#FF6200EE</color>-->
+<!--    <color name="purple_700">#FF3700B3</color>-->
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="custom_purple">#80287B</color>
+
+
+    <color name="blue_50">#e1f2fe</color>
+    <color name="blue_100">#b7defe</color>
+    <color name="blue_200">#87cafe</color>
+    <color name="blue_300">#4fb5fe</color>
+    <color name="blue_400">#00a5ff</color>
+    <color name="blue_500">#0096ff</color>
+    <color name="blue_600">#0088f1</color>
+    <color name="blue_700">#0076de</color>
+    <color name="blue_800">#0065cc</color>
+    <color name="blue_900">#0046ac</color>
+
+    <color name="purple_50">#f6e5fb</color>
+    <color name="purple_100">#e8bdf6</color>
+    <color name="purple_200">#d990f2</color>
+    <color name="purple_300">#c95eed</color>
+    <color name="purple_400">#bc30e9</color>
+    <color name="purple_500">#ae00e3</color>
+    <color name="purple_600">#9c00de</color>
+    <color name="purple_700">#8300d8</color>
+    <color name="purple_800">#6c00d3</color>
+    <color name="purple_900">#3400c6</color>
 </resources>

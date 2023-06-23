@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">JavaPractice</string>
+    <string name="app_name">Activities&amp;Fragments</string>
+    <string name="main_activity">Main Activity</string>
+    <string name="go_to_next_activity">Go To Next Activity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_transactions">Fragment Transactions</string>
+    <string name="intents">Intents</string>
+    <string name="send_text">Send Text</string>
 </resources>
