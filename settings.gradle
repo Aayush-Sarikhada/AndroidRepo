@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "JavaPractice"
 include ':javapractice'
+include ':kotlinPractice'
+include ':app'
