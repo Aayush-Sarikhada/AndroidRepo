@@ -1,14 +1,12 @@
 package com.example.androidpracticeproject.views
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.Toast
 import com.example.androidpracticeproject.R
+import com.example.androidpracticeproject.base.BaseActivity
 import com.example.androidpracticeproject.databinding.ActivityHomeBinding
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
 
     private lateinit var binding: ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
