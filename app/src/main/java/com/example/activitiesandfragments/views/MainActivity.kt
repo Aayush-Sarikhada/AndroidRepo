@@ -1,7 +1,11 @@
 package com.example.activitiesandfragments.views
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import com.example.activitiesandfragments.Constants
@@ -15,14 +19,42 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var fragmentManager: FragmentManager
 
+    companion object {
+        const val REQUEST_KEY = "REQUEST_KEY_MAIN_ACTIVITY"
+    }
+
+    private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val intent = result.data
+            intent?.let {
+                val data = it.getStringExtra(Constants.Keys.RESULT_KEY_SECOND_ACTIVITY) ?: Constants.Strings.EMPTY_DATA
+                Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, data)
+            }
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "On Create")
         super.onCreate(savedInstanceState)
+        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "On Create")
         binding = ActivityMainBinding.inflate(layoutInflater)
         setUpActionBar()
         setContentView(binding.root)
         setUpBottomNavigation()
         setUpFragment()
+        setUpFragmentManagerListener()
+    }
+
+    private fun startSecondActivityForResult() {
+        startForResult.launch(Intent(this,BrowserActivity::class.java))
+    }
+
+    private fun setUpFragmentManagerListener() {
+        fragmentManager.setFragmentResultListener(REQUEST_KEY,this) { requestKey, bundle ->
+            Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Request key: $requestKey")
+            Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Email: ${bundle.getStringArray("EMAIL")}")
+            Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Email Message: ${bundle.getString("EMAIL_MESSAGE")}")
+            Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Email Subject: ${bundle.getString("EMAIL_SUBJECT")}")
+        }
     }
 
     private fun setUpActionBar() {
@@ -71,41 +103,44 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
-    override fun onDestroy() {
-        return
-        Log.d("LIFE_CYCLE","ON Destroy")
-        super.onDestroy()
+    override fun finish() {
+        super.finish()
+        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN,"Finish")
     }
 
     override fun onResume() {
-        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Resumed")
         super.onResume()
+        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Resumed")
+    }
+
+    public override fun onDestroy() {
+        super.onDestroy()
+        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN,"On Destroy")
     }
 
     override fun onAttachedToWindow() {
-        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Attached to window")
         super.onAttachedToWindow()
+        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Attached to window")
     }
 
     override fun onStart() {
-        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Started")
         super.onStart()
+        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Started")
     }
 
-    override fun onStop() {
-        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Stopped")
+    public override fun onStop() {
         super.onStop()
+        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Stopped")
     }
 
     override fun onPause() {
-        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Paused")
         super.onPause()
+        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Paused")
     }
 
     override fun onDetachedFromWindow() {
-        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Detached from window")
         super.onDetachedFromWindow()
+        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Detached from window")
     }
 
 }

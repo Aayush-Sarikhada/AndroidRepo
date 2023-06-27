@@ -1,6 +1,8 @@
 package com.example.activitiesandfragments.fragments
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.activitiesandfragments.Constants
+import com.example.activitiesandfragments.Constants.Strings.URL_FACEBOOK
 import com.example.activitiesandfragments.R
 import com.example.activitiesandfragments.databinding.FragmentComponentsBinding
 
@@ -20,22 +23,9 @@ class ComponentsFragment : Fragment() {
         setUpOnClickListeners()
     }
 
-    private fun setUpOnClickListeners() {
-        binding.btnIntents.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .addToBackStack(null)
-                .setReorderingAllowed(true)
-                .replace(R.id.fragmentContainerView, ImplicitIntentsFragment())
-                .commit()
-        }
-
-        binding.btnImagePicker.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .addToBackStack(null)
-                .setReorderingAllowed(true)
-                .replace(R.id.fragmentContainerView, ImagePickerFragment())
-                .commit()
-        }
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        Log.d(Constants.Tags.LIFE_CYCLE, "ComponentFragment: on Attach")
     }
 
     override fun onDetach() {
@@ -58,16 +48,10 @@ class ComponentsFragment : Fragment() {
         Log.d(Constants.Tags.LIFE_CYCLE, "ComponentFragment: On Create")
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        Log.d(Constants.Tags.LIFE_CYCLE, "ComponentFragment: on Attach")
-    }
-
     override fun onPause() {
         Log.d(Constants.Tags.LIFE_CYCLE, "ComponentFragment: on pause")
         super.onPause()
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -77,6 +61,44 @@ class ComponentsFragment : Fragment() {
         Log.d(Constants.Tags.LIFE_CYCLE, "ComponentFragment: onCreateView")
         binding = FragmentComponentsBinding.inflate(layoutInflater, container, false)
         return binding.root
+    }
+
+    private fun setUpOnClickListeners() {
+        binding.btnIntents.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .addToBackStack(null)
+                .setReorderingAllowed(true)
+                .replace(R.id.fragmentContainerView, ImplicitIntentsFragment())
+                .commit()
+        }
+
+        binding.btnImagePicker.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .addToBackStack(null)
+                .setReorderingAllowed(true)
+                .replace(R.id.fragmentContainerView, ImagePickerFragment())
+                .commit()
+        }
+
+        binding.btnWebBrowser.setOnClickListener {
+            openBrowserActivity(URL_FACEBOOK)
+        }
+
+        binding.btnPendingIntent.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .addToBackStack(null)
+                .setReorderingAllowed(true)
+                .replace(R.id.fragmentContainerView, PendingIntentFragment())
+                .commit()
+        }
+    }
+
+    private fun openBrowserActivity(url: String) {
+        val intent = Intent(Intent.ACTION_VIEW).apply {
+            data = Uri.parse(url)
+        }
+        Intent.createChooser(intent, "Choose App")
+        startActivity(intent)
     }
 
 }

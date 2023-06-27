@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:text="@string/send_text"
         app:layout_constraintEnd_toEndOf="@id/tilMessage"
-        app:layout_constraintTop_toBottomOf="@id/tilMessage"/>
+        app:layout_constraintTop_toBottomOf="@id/tilMessage" />
 
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/divider_1"
@@ -75,6 +75,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/email_address"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -93,6 +95,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/email_subject"
+            android:imeOptions="actionNext"
+            android:inputType="text"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -110,7 +114,9 @@
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/email_subject"
+            android:hint="@string/email_message"
+            android:imeOptions="actionDone"
+            android:inputType="text"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
