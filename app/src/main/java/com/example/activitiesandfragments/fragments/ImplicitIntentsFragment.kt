@@ -33,17 +33,14 @@ class ImplicitIntentsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Log.d(TAG, "fragment On View Created")
         binding.btnSendText.setOnClickListener {
-            val msg = binding.etMessage.text
-            if (msg != null) {
-                if (msg.isNotEmpty()) {
-                    val msgIntent = Intent().apply {
-                        action = Intent.ACTION_SEND
-                        putExtra(Intent.EXTRA_TEXT, msg)
-                        type = "text/plain"
-                    }
-                    val shareIntent = Intent.createChooser(msgIntent, null)
-                    startActivity(shareIntent)
+            val msg = binding.etMessage.text.toString()
+            if (msg.isNotEmpty()) {
+                val msgIntent = Intent(Intent.ACTION_SEND).apply {
+                    type = "text/plain"
+                    putExtra(Intent.EXTRA_TEXT, msg)
                 }
+                val shareIntent = Intent.createChooser(msgIntent,null)
+                startActivity(shareIntent)
             }
         }
 

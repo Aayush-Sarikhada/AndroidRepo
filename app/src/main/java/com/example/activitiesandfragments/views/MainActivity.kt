@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         setUpFragmentManagerListener()
     }
 
-    private fun startSecondActivityForResult() {
+    private fun startBrowserActivityForResult() {
         startForResult.launch(Intent(this,BrowserActivity::class.java))
     }
 

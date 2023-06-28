@@ -10,20 +10,20 @@
         android:id="@+id/btnImagePick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pick_image"
         android:layout_marginTop="14dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/pick_image"
         app:layout_constraintEnd_toStartOf="@id/btnCaptureImage"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCaptureImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/capture_image"
-        app:layout_constraintTop_toTopOf="@id/btnImagePick"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnImagePick"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="@id/btnImagePick" />
 
 
     <com.google.android.material.divider.MaterialDivider
@@ -31,19 +31,30 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginVertical="14dp"
-        app:layout_constraintBottom_toTopOf="@id/lvImages"
+        app:layout_constraintBottom_toTopOf="@id/imgPicked"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnImagePick" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/imgPicked"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/baseline_android_24"
+        app:layout_constraintBottom_toTopOf="@id/lvImages"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider" />
 
     <ListView
         android:id="@+id/lvImages"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/divider"
-        app:layout_constraintStart_toStartOf="@id/divider"
-        app:layout_constraintTop_toBottomOf="@id/divider" />
+        app:layout_constraintEnd_toEndOf="@id/imgPicked"
+        app:layout_constraintStart_toStartOf="@id/imgPicked"
+        app:layout_constraintTop_toBottomOf="@id/imgPicked" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
