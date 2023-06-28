@@ -13,6 +13,7 @@ import com.example.activitiesandfragments.Constants
 import com.example.activitiesandfragments.Constants.Strings.URL_FACEBOOK
 import com.example.activitiesandfragments.R
 import com.example.activitiesandfragments.databinding.FragmentComponentsBinding
+import com.example.practicalChapter3.views.PracticalHomeActivity
 
 class ComponentsFragment : Fragment() {
 
@@ -90,6 +91,10 @@ class ComponentsFragment : Fragment() {
                 .setReorderingAllowed(true)
                 .replace(R.id.fragmentContainerView, PendingIntentFragment())
                 .commit()
+        }
+
+        binding.btnPractical.setOnClickListener {
+            startActivity(Intent(requireContext(),PracticalHomeActivity::class.java))
         }
     }
 

@@ -50,6 +50,14 @@
                 android:layout_marginStart="@dimen/margin_start_button"
                 android:layout_marginEnd="@dimen/margin_end_button"
                 android:text="@string/pending_intents"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPractical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_start_button"
+                android:layout_marginEnd="@dimen/margin_end_button"
+                android:text="@string/chapter_3_practical"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </ScrollView>
 

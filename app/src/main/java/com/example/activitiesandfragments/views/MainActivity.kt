@@ -23,15 +23,17 @@ class MainActivity : AppCompatActivity() {
         const val REQUEST_KEY = "REQUEST_KEY_MAIN_ACTIVITY"
     }
 
-    private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            val intent = result.data
-            intent?.let {
-                val data = it.getStringExtra(Constants.Keys.RESULT_KEY_SECOND_ACTIVITY) ?: Constants.Strings.EMPTY_DATA
-                Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, data)
+    private val startForResult =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val intent = result.data
+                intent?.let {
+                    val data = it.getStringExtra(Constants.Keys.RESULT_KEY_SECOND_ACTIVITY)
+                        ?: Constants.Strings.EMPTY_DATA
+                    Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, data)
+                }
             }
         }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,20 +47,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startBrowserActivityForResult() {
-        startForResult.launch(Intent(this,BrowserActivity::class.java))
+        startForResult.launch(Intent(this, BrowserActivity::class.java))
     }
 
     private fun setUpFragmentManagerListener() {
-        fragmentManager.setFragmentResultListener(REQUEST_KEY,this) { requestKey, bundle ->
+        fragmentManager.setFragmentResultListener(REQUEST_KEY, this) { requestKey, bundle ->
             Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Request key: $requestKey")
             Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Email: ${bundle.getStringArray("EMAIL")}")
-            Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Email Message: ${bundle.getString("EMAIL_MESSAGE")}")
-            Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Email Subject: ${bundle.getString("EMAIL_SUBJECT")}")
+            Log.d(
+                Constants.Tags.TAG_ACTIVITY_MAIN,
+                "Email Message: ${bundle.getString("EMAIL_MESSAGE")}"
+            )
+            Log.d(
+                Constants.Tags.TAG_ACTIVITY_MAIN,
+                "Email Subject: ${bundle.getString("EMAIL_SUBJECT")}"
+            )
         }
     }
 
     private fun setUpActionBar() {
-        supportActionBar?.title = if(binding.bottomNavView.selectedItemId == R.id.uiScreens) {
+        supportActionBar?.title = if (binding.bottomNavView.selectedItemId == R.id.uiScreens) {
             getString(R.string.action_bar_title_ui_screens)
         } else {
             getString(R.string.action_bar_title_components)
@@ -92,7 +100,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpFragment() {
         fragmentManager = supportFragmentManager
-        if(binding.bottomNavView.selectedItemId == R.id.uiScreens) {
+        if (binding.bottomNavView.selectedItemId == R.id.uiScreens) {
             fragmentManager.beginTransaction()
                 .add(R.id.fragmentContainerView, UIScreensFragment())
                 .commit()
@@ -105,7 +113,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun finish() {
         super.finish()
-        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN,"Finish")
+        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "Finish")
     }
 
     override fun onResume() {
@@ -115,7 +123,7 @@ class MainActivity : AppCompatActivity() {
 
     public override fun onDestroy() {
         super.onDestroy()
-        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN,"On Destroy")
+        Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, "On Destroy")
     }
 
     override fun onAttachedToWindow() {

@@ -25,4 +25,11 @@
     <string name="pending_intents">Pending Intents</string>
     <string name="alarm_manger">Alarm Manger</string>
     <string name="notification_manager">Notification Manager</string>
+    <string name="gallery">Gallery</string>
+    <string name="add_message">Add Message</string>
+    <string name="view_message">View Message</string>
+    <string name="content_desc_pick_image">Pick Image</string>
+    <string name="chapter_3_practical">Chapter 3: practical</string>
+    <string name="your_message">Your Message</string>
+    <string name="send_message">Send Message</string>
 </resources>
