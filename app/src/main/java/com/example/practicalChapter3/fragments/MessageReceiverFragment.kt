@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.example.activitiesandfragments.databinding.FragmentMessageReceiverBinding
 import com.example.practicalChapter3.Constants
 import com.example.practicalChapter3.viewModels.SharedViewModel
@@ -16,11 +18,11 @@ import com.example.practicalChapter3.viewModels.SharedViewModel
 class MessageReceiverFragment : Fragment() {
 
     private lateinit var binding: FragmentMessageReceiverBinding
-    private val viewModel: SharedViewModel by viewModels()
+    private lateinit var viewModel: SharedViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setUpResultListener()
+        viewModel = ViewModelProvider(this)[SharedViewModel::class.java]
         setUpListViewData()
     }
 
@@ -37,14 +39,7 @@ class MessageReceiverFragment : Fragment() {
         dataList?.let {
             binding.messagesList.adapter =
                 ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, it)
-        }
-    }
-
-    private fun setUpResultListener() {
-        parentFragment?.setFragmentResultListener(Constants.Keys.MESSAGE_REQUEST_KEY) { _, bundle ->
-            val message = bundle.getString(Constants.Keys.MESSAGE_REQUEST_KEY)
-            if (message != null)
-                Log.d(Constants.Tags.MESSAGE_RECEIVER_FRAGMENT, message)
+            Log.d(Constants.Tags.MESSAGE_RECEIVER_FRAGMENT, viewModel.someData.value.toString())
         }
     }
 

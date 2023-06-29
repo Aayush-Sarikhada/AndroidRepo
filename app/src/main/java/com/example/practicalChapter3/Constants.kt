@@ -13,4 +13,8 @@ object Constants {
         const val BUNDLE_MESSAGE_KEY = "BUNDLE_MESSAGE_KEY"
     }
 
+    object Strings {
+        const val ACTION_BAR_TITLE_PRACTICAL = "Chapter 3: Practical"
+    }
+
 }

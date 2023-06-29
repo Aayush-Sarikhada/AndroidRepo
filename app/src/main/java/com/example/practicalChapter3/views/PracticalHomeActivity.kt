@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import com.example.activitiesandfragments.R
 import com.example.activitiesandfragments.databinding.ActivityPracticalHomeBinding
+import com.example.practicalChapter3.Constants
 import com.example.practicalChapter3.fragments.GalleryFragment
 import com.example.practicalChapter3.fragments.MessageReceiverFragment
 import com.example.practicalChapter3.fragments.MessageSenderFragment
@@ -19,8 +20,13 @@ class PracticalHomeActivity : AppCompatActivity() {
         binding = ActivityPracticalHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         fragmentManager = supportFragmentManager
+        setUpActionBar()
         setUpInitialFragment()
         setUpOnClickListeners()
+    }
+
+    private fun setUpActionBar() {
+        supportActionBar?.title = Constants.Strings.ACTION_BAR_TITLE_PRACTICAL
     }
 
     private fun setUpInitialFragment() {
