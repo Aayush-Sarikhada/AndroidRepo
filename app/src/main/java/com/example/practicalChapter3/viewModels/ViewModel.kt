@@ -1,6 +1,6 @@
 package com.example.practicalChapter3.viewModels
 
-import android.util.Log
+import android.graphics.Bitmap
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,22 +9,24 @@ class SharedViewModel : ViewModel() {
 
     private var _listOfMessages = MutableLiveData<MutableList<String>>(mutableListOf())
     val listOfMessage: LiveData<MutableList<String>>
-        get() {
-            return _listOfMessages
-        }
+        get() = _listOfMessages
+    private val messageList = mutableListOf<String>()
 
-    private var _someData = MutableLiveData<Int>(0)
-    val someData: LiveData<Int>
-        get() = _someData
+    var _previewMessage = MutableLiveData("Preview string")
+    val previewMessage: LiveData<String>
+        get() = _previewMessage
 
-    fun setSomeData(data: Int) {
-        _someData.value = data
+    fun updateMessage(msg: String) {
+        _previewMessage.postValue(msg)
     }
 
     fun addToList(message: String) {
-        Log.d("VIEW_MODEL", message)
-        _listOfMessages.value?.add(message)
-        Log.d("VIEW_MODEL", _listOfMessages.value.toString())
+        messageList.add(message)
+        _listOfMessages.postValue(messageList)
     }
 
+    fun clearList() {
+        messageList.clear()
+        _listOfMessages.postValue(messageList)
+    }
 }

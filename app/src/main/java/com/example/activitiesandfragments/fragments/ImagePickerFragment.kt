@@ -26,10 +26,6 @@ class ImagePickerFragment : Fragment() {
     private lateinit var binding: FragmentImagePickerBinding
     private var uriList: MutableList<Uri> = mutableListOf()
 
-    companion object {
-        var i = 0
-    }
-
     private val pickImage =
         registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
             if (uri == null) {
@@ -37,13 +33,8 @@ class ImagePickerFragment : Fragment() {
             } else {
                 Log.d(Constants.Tags.TAG_IMAGE_PICKER_FRAGMENT, "URI: $uri")
                 uriList.add(uri)
-//                val chooser = Intent.createChooser(Intent(Intent.ACTION_VIEW).apply {
-//                    data = uri
-//                    type = "image/*"
-//                }, "Choose app")
                 startActivity(Intent(Intent.ACTION_VIEW).apply {
                     data = uri
-//                    type = "image/*"
                 })
                 setUpImageList()
             }
@@ -54,7 +45,6 @@ class ImagePickerFragment : Fragment() {
             if (activityResult.resultCode == Activity.RESULT_OK) {
                 val thumbnail: Bitmap? = activityResult.data?.getParcelableExtra("data")
                 binding.imgPicked.setImageBitmap(thumbnail)
-                Log.d("IMAGE_PICKER_FRAGMENT", thumbnail.toString())
             }
         }
 

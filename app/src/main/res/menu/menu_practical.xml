@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/gallery"
+        android:id="@+id/galleryFragment"
         android:icon="@drawable/outline_photo_size_select_actual_24"
         android:title="@string/gallery" />
     <item
-        android:id="@+id/addMessage"
+        android:id="@+id/messageSenderFragment"
         android:icon="@drawable/outline_message_24"
         android:title="@string/add_message" />
     <item
-        android:id="@+id/viewMessage"
+        android:id="@+id/messageReceiverFragment"
         android:icon="@drawable/outline_preview_24"
         android:title="@string/view_message" />
 </menu>

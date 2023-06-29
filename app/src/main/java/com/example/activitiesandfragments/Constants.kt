@@ -4,6 +4,9 @@ object Constants {
 
     object Keys {
         const val RESULT_KEY_SECOND_ACTIVITY = "RESULT_KEY_SECOND_ACTIVITY"
+        const val BUNDLE_KEY_EMAIL = "EMAIL"
+        const val EMAIL_MESSAGE = "EMAIL_MESSAGE"
+        const val EMAIL_SUBJECT = "EMAIL_SUBJECT"
     }
 
     object Codes {

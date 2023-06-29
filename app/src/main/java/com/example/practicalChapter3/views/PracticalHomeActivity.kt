@@ -1,8 +1,13 @@
 package com.example.practicalChapter3.views
 
+import android.content.Context
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentManager
+import androidx.navigation.NavController
 import com.example.activitiesandfragments.R
 import com.example.activitiesandfragments.databinding.ActivityPracticalHomeBinding
 import com.example.practicalChapter3.Constants
@@ -17,7 +22,7 @@ class PracticalHomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPracticalHomeBinding.inflate(layoutInflater)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_practical_home)
         setContentView(binding.root)
         fragmentManager = supportFragmentManager
         setUpActionBar()
@@ -38,21 +43,21 @@ class PracticalHomeActivity : AppCompatActivity() {
     private fun setUpOnClickListeners() {
         binding.bottomNavigation.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.gallery -> {
+                R.id.galleryFragment -> {
                     fragmentManager.beginTransaction()
                         .replace(R.id.fragmentContainerViewID, GalleryFragment())
                         .commit()
                     true
                 }
 
-                R.id.addMessage -> {
+                R.id.messageSenderFragment -> {
                     fragmentManager.beginTransaction()
                         .replace(R.id.fragmentContainerViewID, MessageSenderFragment())
                         .commit()
                     true
                 }
 
-                R.id.viewMessage -> {
+                R.id.messageReceiverFragment -> {
                     fragmentManager.beginTransaction()
                         .replace(R.id.fragmentContainerViewID, MessageReceiverFragment())
                         .commit()
@@ -64,4 +69,13 @@ class PracticalHomeActivity : AppCompatActivity() {
         }
     }
 
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        if (currentFocus != null) {
+            val inputMethodManager =
+                getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputMethodManager.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
+            currentFocus?.clearFocus()
+        }
+        return super.dispatchTouchEvent(ev)
+    }
 }

@@ -13,6 +13,9 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResult
+import com.example.activitiesandfragments.Constants.Keys.BUNDLE_KEY_EMAIL
+import com.example.activitiesandfragments.Constants.Keys.EMAIL_MESSAGE
+import com.example.activitiesandfragments.Constants.Keys.EMAIL_SUBJECT
 import com.example.activitiesandfragments.databinding.FragmentImplicitIntentsBinding
 import com.example.activitiesandfragments.views.MainActivity
 import java.net.URI
@@ -64,9 +67,9 @@ class ImplicitIntentsFragment : Fragment() {
             putExtra(Intent.EXTRA_TEXT, message)
         }
         val bundle = Bundle().apply {
-            putStringArray("EMAIL", addresses)
-            putString("EMAIL_MESSAGE", message)
-            putString("EMAIL_SUBJECT", subject)
+            putStringArray(BUNDLE_KEY_EMAIL , addresses)
+            putString(EMAIL_MESSAGE, message)
+            putString(EMAIL_SUBJECT, subject)
         }
         setFragmentResult(MainActivity.REQUEST_KEY, bundle)
         startActivity(intent)

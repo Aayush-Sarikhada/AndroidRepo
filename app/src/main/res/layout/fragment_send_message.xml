@@ -1,35 +1,64 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.practicalChapter3.fragments.MessageSenderFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilYourMessage"
-        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.practicalChapter3.viewModels.SharedViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="48dp"
-        android:hint="@string/your_message"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        tools:context="com.example.practicalChapter3.fragments.MessageSenderFragment">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etYourMessage"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="match_parent">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSendMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/send_message"
-        app:layout_constraintEnd_toEndOf="@id/tilYourMessage"
-        app:layout_constraintStart_toStartOf="@id/tilYourMessage"
-        app:layout_constraintTop_toBottomOf="@id/tilYourMessage" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilYourMessage"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/til_margin_horizontal"
+                android:layout_marginTop="@dimen/til_margin_top"
+                android:hint="@string/your_message"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etYourMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@={viewModel._previewMessage}"
+                    android:imeOptions="actionDone" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tvMessagePreview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tv_preview_margin_top"
+                android:text="@{viewModel.previewMessage}"
+                android:background="@drawable/shape_message_tv_background"
+                app:layout_constraintEnd_toEndOf="@id/tilYourMessage"
+                app:layout_constraintStart_toStartOf="@id/tilYourMessage"
+                app:layout_constraintTop_toBottomOf="@id/tilYourMessage" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabSendMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fab_margin"
+                android:contentDescription="@string/content_desc_pick_image"
+                android:src="@drawable/outline_save_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

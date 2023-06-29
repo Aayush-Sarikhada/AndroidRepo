@@ -40,7 +40,7 @@ class PendingIntentFragment : Fragment() {
         }
 
         binding.btnNotificationManager.setOnClickListener {
-
+            // TODO: add code after learning notification manager
         }
     }
 
