@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.example.activitiesandfragments.R
 import com.example.activitiesandfragments.databinding.FragmentSendMessageBinding
@@ -16,11 +18,10 @@ import com.example.practicalChapter3.viewModels.SharedViewModel
 class MessageSenderFragment : Fragment() {
 
     private lateinit var binding: FragmentSendMessageBinding
-    private lateinit var viewModel: SharedViewModel
+    private val viewModel: SharedViewModel by activityViewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(requireActivity())[SharedViewModel::class.java]
         setUpOnClickListeners()
         setUpObservers()
     }

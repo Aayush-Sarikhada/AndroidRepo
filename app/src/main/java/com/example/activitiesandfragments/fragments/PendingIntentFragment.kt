@@ -1,13 +1,16 @@
 package com.example.activitiesandfragments.fragments
 
 import android.app.AlarmManager
+import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.NotificationCompat
 import androidx.fragment.app.Fragment
 import com.example.activitiesandfragments.Constants
 import com.example.activitiesandfragments.databinding.FragmentPendingIntentBinding
@@ -40,7 +43,10 @@ class PendingIntentFragment : Fragment() {
         }
 
         binding.btnNotificationManager.setOnClickListener {
-            // TODO: add code after learning notification manager
+            val nm = activity?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val notificationBuilder = NotificationCompat.Builder(requireContext(),"NOTIFICATION_CHANNEL_ID")
+            val pendingIntent = PendingIntent.getActivity(requireContext(),10,Intent(Intent.ACTION_VIEW),PendingIntent.FLAG_IMMUTABLE)
+            notificationBuilder.setContentIntent(pendingIntent)
         }
     }
 
