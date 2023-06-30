@@ -22,6 +22,7 @@ class MessageSenderFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(requireActivity())[SharedViewModel::class.java]
         setUpOnClickListeners()
+        setUpObservers()
     }
 
     override fun onCreateView(
@@ -35,6 +36,14 @@ class MessageSenderFragment : Fragment() {
             false
         )
         return binding.root
+    }
+
+    private fun setUpObservers() {
+        viewModel.previewMessage.observe(viewLifecycleOwner) {
+            binding.viewModel = viewModel
+            binding.executePendingBindings()
+        }
+        binding.viewModel = viewModel
     }
 
     private fun setUpOnClickListeners() {

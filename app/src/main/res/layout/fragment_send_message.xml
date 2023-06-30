@@ -34,7 +34,7 @@
                     android:id="@+id/etYourMessage"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@={viewModel._previewMessage}"
+                    android:text="@={viewModel.previewMessage}"
                     android:imeOptions="actionDone" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -43,6 +43,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/tv_preview_margin_top"
+                android:padding="8dp"
                 android:text="@{viewModel.previewMessage}"
                 android:background="@drawable/shape_message_tv_background"
                 app:layout_constraintEnd_toEndOf="@id/tilYourMessage"
