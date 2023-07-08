@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_menu_margin_start">20dp</dimen>
+    <dimen name="toolbar_notification_margin_end">20dp</dimen>
+    <dimen name="toolbar_title_size">20sp</dimen>
+    <dimen name="toolbar_title_spacing" format="float">1.02</dimen>
+    <dimen name="border_stroke_width">1dp</dimen>
+    <dimen name="toolbar_icon_border_corner_radius">3dp</dimen>
+    <dimen name="tab_indicator_height">0dp</dimen>
+
+    <dimen name="heading_margin_start">20dp</dimen>
+    <dimen name="heading_margin_top">20dp</dimen>
+    <dimen name="heading_margin_end">20dp</dimen>
+
+    <dimen name="heading_exchange_text_size">28sp</dimen>
+    <dimen name="heading_date_text_size">12sp</dimen>
+
+    <dimen name="divider_margin_top">10dp</dimen>
+    <dimen name="divider_margin_start">20dp</dimen>
+    <dimen name="divider_margin_end">20dp</dimen>
+
+    <dimen name="divider_white_view_width">3dp</dimen>
+    <dimen name="divider_white_view_height">1dp</dimen>
+    <dimen name="divider_gray_view_height">1dp</dimen>
+
+    <dimen name="card_radius">10dp</dimen>
+    <dimen name="exchange_selector_card_radius">8dp</dimen>
+    <dimen name="card_divider_line_margin_top">25dp</dimen>
+    <dimen name="card_divider_line_3_margin_top">20dp</dimen>
+
+<!-- stocks spinner view row dimension -->
+    <dimen name="padding_stock_spinner_row">5dp</dimen>
+
+<!-- exchange card view dimension -->
+    <dimen name="exchange_card_corner_radius">10dp</dimen>
+    <dimen name="exchange_card_padding">20dp</dimen>
+
+    <dimen name="exchange_spinner_margin_top">10dp</dimen>
+
+    <dimen name="exchange_stock_price_margin_top">10dp</dimen>
+
+    <dimen name="divider_line_1_margin_start">10dp</dimen>
+    <dimen name="divider_line_1_width">50dp</dimen>
+    <dimen name="divider_line_1_height">1dp</dimen>
+
+    <dimen name="price_amount_view_1_margin_start">10dp</dimen>
+    <dimen name="price_amount_view_2_margin_start">10dp</dimen>
+    <dimen name="price_amount_view_1_padding">10dp</dimen>
+    <dimen name="price_amount_view_2_padding">10dp</dimen>
+
+    <dimen name="minus_img_padding">1dp</dimen>
+    <dimen name="plus_img_padding">1dp</dimen>
+    <dimen name="plus_img_margin_start">10dp</dimen>
+
+    <dimen name="share_amount_1_margin_start">10dp</dimen>
+    <dimen name="share_amount_2_margin_start">10dp</dimen>
+    <dimen name="share_amount_1_text_size">20sp</dimen>
+    <dimen name="share_amount_2_text_size">20sp</dimen>
+
+    <dimen name="price_label_margin_top">5dp</dimen>
+    <dimen name="price_label_text_size">12sp</dimen>
+    <dimen name="price_value_text_size">12sp</dimen>
+
+<!-- exchange arrows dimensions -->
+    <dimen name="exchange_arrow_height">35dp</dimen>
+    <dimen name="exchange_arrow_width">35dp</dimen>
+    <dimen name="exchange_arrow_margin_top">10dp</dimen>
+
+    <dimen name="you_receive_margin_top">10dp</dimen>
+    <dimen name="you_receive_spinner_margin_top">10dp</dimen>
+
+    <dimen name="divider_line_2_margin_start">10dp</dimen>
+    <dimen name="divider_line_2_width">50dp</dimen>
+    <dimen name="divider_line_2_height">1dp</dimen>
+
+    <dimen name="transaction_cost_label_margin_top">10dp</dimen>
+    <dimen name="exchange_stock_drawable_padding">3dp</dimen>
+
+    <dimen name="exchange_for_btn_margin_top">20dp</dimen>
+    <dimen name="exchange_for_btn_padding">10dp</dimen>
+    <dimen name="exchange_for_btn_margin_horizontal">20dp</dimen>
+    <dimen name="exchange_for_text_size">16sp</dimen>
+    <dimen name="exchange_for_text_padding">5dp</dimen>
+
+</resources>
