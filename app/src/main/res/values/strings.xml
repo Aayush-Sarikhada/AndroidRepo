@@ -1,3 +1,45 @@
 <resources>
-    <string name="app_name">JavaPractice</string>
+    <string name="app_name">AndroidPracticeProject</string>
+    <string name="toolbarTitle">GEMINI</string>
+    <string name="tab_item_limit">Limit</string>
+    <string name="tab_item_market">Market</string>
+    <string name="tab_item_pool">Pool</string>
+    <string name="tab_item_info">Info</string>
+    <string name="heading_exchange">Exchange</string>
+    <string name="heading_date">OCTOBER 18, SATURDAY 3:19:23 PM</string>
+    <string name="you_exchange_label">You exchange</string>
+    <string name="avax">AVAX</string>
+    <string name="menu_icon">menu icon</string>
+    <string name="notification_icon">notification icon</string>
+    <string name="stock_numbers">47,38662</string>
+    <string name="stock1">Stock1</string>
+    <string name="market_indicators_label">MA \t / \t EMA \t / \t BOLL</string>
+    <string name="exchange_stock_current_price">$0.187200</string>
+    <string name="price">PRICE</string>
+    <string name="exchange_stock_price">~$ 6.022,84</string>
+    <string name="you_receive">You Receive</string>
+    <string name="minus_icon_content_description">minus_icon</string>
+    <string name="plus_icon_content_description">plus icon</string>
+    <string name="receive_stock_current_price">$0.187200</string>
+    <string name="receive_stock_price">~$ 6.022,84</string>
+    <string name="transaction_cost">Transaction cost</string>
+    <string name="transaction_cost_value">$32.80</string>
+    <string name="exchanged_stock_detail">ABC1</string>
+    <string name="picked_stock_snack_bar">"StockPicked"</string>
+    <string name="exchange_for">Exchange for</string>
+    <string name="total_stock">1.497,68</string>
+    <string name="stock_name_total">LINK</string>
+    <string name="market_label">Market</string>
+    <string name="wallet_label">Wallet</string>
+    <string name="exchange_label">Exchange</string>
+    <string name="fab_for_exchange">fab for exchange</string>
+    <string name="BOA">BOA</string>
+    <string name="TCS">TCS</string>
+    <string name="HDFC">HDFC</string>
+    <string name="ITC">ITC</string>
+    <string name="AXIS">AXIS</string>
+    <string name="SBI">SBI</string>
+    <string name="dismiss">Dismiss</string>
+
+
 </resources>
