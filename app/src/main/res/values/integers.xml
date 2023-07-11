@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="heading_exchange_weight">1</integer>
+    <integer name="divider_gray_view_weight">1</integer>
+</resources>
