@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">JavaPractice</string>
+
+<!--    Web service     -->
+    <string name="login">Login</string>
+    <string name="signup">SignUp</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forgot_password">forgot password</string>
+    <string name="or">Or</string>
+    <string name="continue_with_google">Continue with google</string>
+    <string name="create_your_account">Create your account</string>
+    <string name="full_name">Full Name</string>
+    <string name="terms_and_conditions">terms and conditions</string>
+    <string name="by_signing_up_you_accept_our">By signing up you accept our</string>
+    <string name="log_in">Log In</string>
 </resources>
