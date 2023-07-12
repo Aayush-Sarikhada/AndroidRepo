@@ -1,5 +1,6 @@
 package com.example.webservices.adequateshopuserapi.di
 
+import com.example.webservices.adequateshopuserapi.Constants
 import com.example.webservices.adequateshopuserapi.interfaces.ApiService
 import com.example.webservices.adequateshopuserapi.repositories.UsersRepository
 import com.google.gson.Gson
@@ -30,7 +31,7 @@ class AppModule {
         interceptor.level = HttpLoggingInterceptor.Level.BODY
         val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
         return Retrofit.Builder()
-            .baseUrl(com.example.adequateshopuserapi.Constants.APIConstants.BASE_URL)
+            .baseUrl(Constants.APIConstants.BASE_URL)
             .client(client)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()

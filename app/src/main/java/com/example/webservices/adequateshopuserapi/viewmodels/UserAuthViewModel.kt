@@ -15,7 +15,7 @@ import javax.inject.Inject
 class UserAuthViewModel @Inject constructor(
     private val usersRepository: UsersRepository
 ) : ViewModel() {
-    private val bearerToken = ""
+    private var bearerToken = ""
 
     private val _registerResponse = MutableLiveData<AuthResponse>()
     var registerResponse = _registerResponse
@@ -25,15 +25,20 @@ class UserAuthViewModel @Inject constructor(
 
     fun registerUser(registerRequest: AuthRequest) {
         viewModelScope.launch {
-            val registerResponse = usersRepository.registerUser(registerRequest)
-            Log.d("USER_AUTH_VIEW_MODEL", registerResponse?.data.toString())
+            val response = usersRepository.registerUser(registerRequest)
+            response?.let {
+                _registerResponse.postValue(it)
+            }
         }
     }
 
     fun loginUser(loginRequest: AuthRequest) {
         viewModelScope.launch {
-            val loginResponse = usersRepository.loginUser(loginRequest)
-            Log.d("USER_AUTH_VIEW_MODEL", loginResponse?.data.toString())
+            val response = usersRepository.loginUser(loginRequest)
+            response?.let {
+                _loginResponse.postValue(it)
+                bearerToken = it.data?.token.toString()
+            }
         }
     }
 

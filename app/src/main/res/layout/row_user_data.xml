@@ -1,66 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    android:elevation="4dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+        <variable
+            name="authViewModel"
+            type="com.example.webservices.adequateshopuserapi.viewmodels.UserAuthViewModel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:layout_margin="8dp"
+        android:elevation="4dp">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imgUser"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:src="@drawable/ic_launcher_background"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvUserId"
-            android:layout_width="0dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:text="id:"
-            app:layout_constraintBottom_toTopOf="@id/tvUserFirstName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/imgUser"
-            app:layout_constraintTop_toTopOf="@id/imgUser" />
+            android:padding="8dp">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvUserFirstName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="first name"
-            app:layout_constraintBottom_toTopOf="@id/tvUserLastName"
-            app:layout_constraintEnd_toEndOf="@id/tvUserId"
-            app:layout_constraintStart_toStartOf="@id/tvUserId"
-            app:layout_constraintTop_toBottomOf="@id/tvUserId" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgUser"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvUserLastName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="last name"
-            app:layout_constraintBottom_toTopOf="@id/tvUserEmail"
-            app:layout_constraintEnd_toEndOf="@id/tvUserFirstName"
-            app:layout_constraintStart_toStartOf="@id/tvUserFirstName"
-            app:layout_constraintTop_toBottomOf="@id/tvUserFirstName" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUserId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="id:"
+                app:layout_constraintBottom_toTopOf="@id/tvUserFirstName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgUser"
+                app:layout_constraintTop_toTopOf="@id/imgUser" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvUserEmail"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="email"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/tvUserLastName"
-            app:layout_constraintStart_toStartOf="@id/tvUserLastName"
-            app:layout_constraintTop_toBottomOf="@id/tvUserLastName" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUserFirstName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="first name"
+                app:layout_constraintBottom_toTopOf="@id/tvUserLastName"
+                app:layout_constraintEnd_toEndOf="@id/tvUserId"
+                app:layout_constraintStart_toStartOf="@id/tvUserId"
+                app:layout_constraintTop_toBottomOf="@id/tvUserId" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</com.google.android.material.card.MaterialCardView>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUserLastName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="last name"
+                app:layout_constraintBottom_toTopOf="@id/tvUserEmail"
+                app:layout_constraintEnd_toEndOf="@id/tvUserFirstName"
+                app:layout_constraintStart_toStartOf="@id/tvUserFirstName"
+                app:layout_constraintTop_toBottomOf="@id/tvUserFirstName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUserEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="email"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/tvUserLastName"
+                app:layout_constraintStart_toStartOf="@id/tvUserLastName"
+                app:layout_constraintTop_toBottomOf="@id/tvUserLastName" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
