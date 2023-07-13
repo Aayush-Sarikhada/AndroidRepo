@@ -3,6 +3,7 @@ package com.example.webservices.adequateshopuserapi.views
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
@@ -43,6 +44,7 @@ class LoginActivity : BaseActivity() {
         authViewModel.loginResponse.observe(this) {
             Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
             if(it.code == ResponseCode.SUCCESS.ordinal) {
+                Log.d("MAIN", it.data?.token.toString())
                 getSharedPreferences(Constants.Strings.SHARED_PREF, Context.MODE_PRIVATE).edit().putString(Constants.Keys.BEARER_TOKEN, it.data?.token).apply()
                 startActivity(Intent(this, HomeActivity::class.java))
                 finish()

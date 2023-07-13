@@ -1,6 +1,5 @@
 package com.example.webservices.adequateshopuserapi.viewmodels
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -16,10 +15,8 @@ class UserAuthViewModel @Inject constructor(
     private val usersRepository: UsersRepository
 ) : ViewModel() {
     private var bearerToken = ""
-
     private val _registerResponse = MutableLiveData<AuthResponse>()
     var registerResponse = _registerResponse
-
     private val _loginResponse = MutableLiveData<AuthResponse>()
     var loginResponse = _loginResponse
 

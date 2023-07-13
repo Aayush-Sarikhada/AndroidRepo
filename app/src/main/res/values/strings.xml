@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">JavaPractice</string>
 
-<!--    Web service     -->
+    <!--    Web service     -->
     <string name="login">Login</string>
     <string name="signup">SignUp</string>
     <string name="email_address">Email Address</string>
@@ -15,4 +15,11 @@
     <string name="terms_and_conditions">terms and conditions</string>
     <string name="by_signing_up_you_accept_our">By signing up you accept our</string>
     <string name="log_in">Log In</string>
+    <string name="id">Id:</string>
+    <string name="email">Email:</string>
+    <string name="created_on">Created on:</string>
+    <string name="name">Name:</string>
+    <string name="location">Location:</string>
+    <string name="user_created_successfully">User created successfully</string>
+    <string name="create_user">Create User</string>
 </resources>

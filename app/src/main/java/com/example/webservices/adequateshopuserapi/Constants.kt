@@ -12,6 +12,7 @@ object Constants {
 
     object Keys {
         const val BEARER_TOKEN = "BEARER_TOKEN"
+        const val USER_ID = "USER_ID"
     }
 
 }

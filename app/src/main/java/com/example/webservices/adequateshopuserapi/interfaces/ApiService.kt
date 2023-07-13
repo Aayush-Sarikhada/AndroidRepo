@@ -2,6 +2,7 @@ package com.example.webservices.adequateshopuserapi.interfaces
 
 import com.example.webservices.adequateshopuserapi.models.AuthRequest
 import com.example.webservices.adequateshopuserapi.models.AuthResponse
+import com.example.webservices.adequateshopuserapi.models.NewUserInfo
 import com.example.webservices.adequateshopuserapi.models.userList.UserInfo
 import com.example.webservices.adequateshopuserapi.models.userList.UsersList
 import retrofit2.Response
@@ -21,9 +22,18 @@ interface ApiService {
     suspend fun loginUser(@Body authRequest: AuthRequest): Response<AuthResponse>
 
     @GET("/api/users")
-    suspend fun getUsersOn(@Query("page") page: Int, @Header("Authorization") authorization: String): Response<UsersList>
+    suspend fun getUsersOn(
+        @Query("page") page: Int,
+        @Header("Authorization") authorization: String
+    ): Response<UsersList>
 
     @GET("/api/users/{id}")
-    suspend fun getUserWith(@Path("id") id: Int, @Header("Authorization") authorization: String): Response<UserInfo>
+    suspend fun getUserWith(
+        @Path("id") id: Int,
+        @Header("Authorization") authorization: String
+    ): Response<UserInfo>
+
+    @POST("/api/users")
+    suspend fun createUser(@Body userInfo: NewUserInfo, @Header("Authorization") authorization: String): Response<UserInfo>
 
 }
