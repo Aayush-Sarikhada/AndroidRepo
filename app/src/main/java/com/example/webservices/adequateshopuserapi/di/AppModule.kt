@@ -2,6 +2,8 @@ package com.example.webservices.adequateshopuserapi.di
 
 import com.example.webservices.adequateshopuserapi.Constants
 import com.example.webservices.adequateshopuserapi.interfaces.ApiService
+import com.example.webservices.adequateshopuserapi.interfaces.ImgBBApiService
+import com.example.webservices.adequateshopuserapi.repositories.ImgBBRepository
 import com.example.webservices.adequateshopuserapi.repositories.UsersRepository
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -46,5 +48,13 @@ class AppModule {
     @Singleton
     fun provideUsersRepository(apiService: ApiService): UsersRepository =
         UsersRepository(apiService)
+
+    @Provides
+    @Singleton
+    fun provideImageApiService(retrofit: Retrofit): ImgBBApiService = retrofit.create(ImgBBApiService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideImageRepository(imgBBApiService: ImgBBApiService): ImgBBRepository = ImgBBRepository(imgBBApiService)
 
 }

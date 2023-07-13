@@ -1,4 +1,4 @@
-package com.example.webservices.adequateshopuserapi.views
+package com.example.webservices.adequateshopuserapi.views.authentication
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,11 +9,9 @@ import androidx.databinding.DataBindingUtil
 import com.example.javapractice.R
 import com.example.javapractice.databinding.ActivitySignUpBinding
 import com.example.webservices.adequateshopuserapi.base.BaseActivity
-import com.example.webservices.adequateshopuserapi.common.ResponseCode
 import com.example.webservices.adequateshopuserapi.models.AuthRequest
 import com.example.webservices.adequateshopuserapi.viewmodels.UserAuthViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class SignUpActivity : BaseActivity() {

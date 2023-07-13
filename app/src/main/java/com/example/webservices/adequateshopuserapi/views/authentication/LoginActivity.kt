@@ -1,4 +1,4 @@
-package com.example.webservices.adequateshopuserapi.views
+package com.example.webservices.adequateshopuserapi.views.authentication
 
 import android.content.Context
 import android.content.Intent
@@ -14,6 +14,7 @@ import com.example.webservices.adequateshopuserapi.base.BaseActivity
 import com.example.webservices.adequateshopuserapi.common.ResponseCode
 import com.example.webservices.adequateshopuserapi.models.AuthRequest
 import com.example.webservices.adequateshopuserapi.viewmodels.UserAuthViewModel
+import com.example.webservices.adequateshopuserapi.views.home.HomeActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

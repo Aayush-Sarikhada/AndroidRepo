@@ -4,6 +4,8 @@ object Constants {
 
     object APIConstants {
         const val BASE_URL = "http://restapi.adequateshop.com"
+        const val IMGBB_BASE_URL = "http://restapi.adequateshop.com"
+        const val IMGBB_API_KEY = "13d8e3229d0a280ec1c347d127a0a1aa"
     }
 
     object Strings {

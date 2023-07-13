@@ -1,4 +1,4 @@
-package com.example.webservices.adequateshopuserapi.views
+package com.example.webservices.adequateshopuserapi.views.home
 
 import android.content.Context
 import android.os.Bundle

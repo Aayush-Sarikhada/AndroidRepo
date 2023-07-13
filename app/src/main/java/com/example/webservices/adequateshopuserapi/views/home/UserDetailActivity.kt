@@ -1,4 +1,4 @@
-package com.example.webservices.adequateshopuserapi.views
+package com.example.webservices.adequateshopuserapi.views.home
 
 import android.annotation.SuppressLint
 import android.content.Context

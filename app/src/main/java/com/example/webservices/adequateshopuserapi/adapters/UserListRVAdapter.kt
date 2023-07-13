@@ -12,7 +12,7 @@ import com.example.javapractice.databinding.RowLoadingBinding
 import com.example.javapractice.databinding.RowUserDataBinding
 import com.example.webservices.adequateshopuserapi.Constants
 import com.example.webservices.adequateshopuserapi.models.userList.UserInfo
-import com.example.webservices.adequateshopuserapi.views.UserDetailActivity
+import com.example.webservices.adequateshopuserapi.views.home.UserDetailActivity
 import com.squareup.picasso.Picasso
 
 class UserListRVAdapter(private var userList: List<UserInfo>) :
