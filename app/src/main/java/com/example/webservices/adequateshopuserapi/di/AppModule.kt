@@ -15,6 +15,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Named
 import javax.inject.Singleton
 
 
@@ -41,6 +42,20 @@ class AppModule {
 
     @Provides
     @Singleton
+    @Named("ImgBB")
+    fun provideImgBBRepository(gson: Gson): Retrofit {
+        val interceptor = HttpLoggingInterceptor()
+        interceptor.level = HttpLoggingInterceptor.Level.BODY
+        val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
+        return Retrofit.Builder()
+            .baseUrl(Constants.APIConstants.IMGBB_BASE_URL)
+            .client(client)
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .build()
+    }
+
+    @Provides
+    @Singleton
     fun provideApiService(retrofit: Retrofit): ApiService =
         retrofit.create(ApiService::class.java)
 
@@ -51,10 +66,12 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideImageApiService(retrofit: Retrofit): ImgBBApiService = retrofit.create(ImgBBApiService::class.java)
+    fun provideImageApiService(@Named("ImgBB") retrofit: Retrofit): ImgBBApiService =
+        retrofit.create(ImgBBApiService::class.java)
 
     @Provides
     @Singleton
-    fun provideImageRepository(imgBBApiService: ImgBBApiService): ImgBBRepository = ImgBBRepository(imgBBApiService)
+    fun provideImageRepository(imgBBApiService: ImgBBApiService): ImgBBRepository =
+        ImgBBRepository(imgBBApiService)
 
 }

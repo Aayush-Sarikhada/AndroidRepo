@@ -17,23 +17,45 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnUpload"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/upload"
-            app:layout_constraintEnd_toEndOf="@id/imgUpload"
-            app:layout_constraintStart_toStartOf="@id/imgUpload"
-            app:layout_constraintTop_toBottomOf="@id/imgUpload" />
-
         <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/progressImgUpload"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="@id/imgUpload"
             app:layout_constraintStart_toStartOf="@id/imgUpload"
-            app:layout_constraintTop_toBottomOf="@id/btnUpload" />
+            app:layout_constraintTop_toBottomOf="@id/imgUpload"
+            app:layout_constraintBottom_toTopOf="@id/btnUploadImage"/>
 
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSelectImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_image"
+            app:layout_constraintEnd_toEndOf="@id/imgUpload"
+            app:layout_constraintStart_toStartOf="@id/imgUpload"
+            app:layout_constraintTop_toBottomOf="@id/progressImgUpload"
+            android:layout_marginTop="24dp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUploadImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/upload_image"
+            app:layout_constraintStart_toStartOf="@id/btnSelectImage"
+            app:layout_constraintEnd_toEndOf="@id/btnSelectImage"
+            app:layout_constraintTop_toBottomOf="@id/btnSelectImage"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSeeImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="@string/see_image"
+            app:layout_constraintStart_toStartOf="@id/btnSelectImage"
+            app:layout_constraintEnd_toEndOf="@id/btnSelectImage"
+            app:layout_constraintTop_toBottomOf="@id/btnUploadImage"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

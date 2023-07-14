@@ -23,4 +23,8 @@
     <string name="user_created_successfully">User created successfully</string>
     <string name="create_user">Create User</string>
     <string name="upload">Upload</string>
+    <string name="select_image">Select Image</string>
+    <string name="upload_image">Upload Image</string>
+    <string name="see_image">See image</string>
+    <string name="create_user_on_server">Create user on server</string>
 </resources>

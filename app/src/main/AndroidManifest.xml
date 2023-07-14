@@ -15,8 +15,8 @@
         android:theme="@style/Theme.JavaPractice"
         tools:targetApi="31">
         <activity
-            android:name="com.example.webservices.imageuploaddownload.ui.views.ImageUploadActivity"
-            android:exported="true" />
+            android:name="com.example.webservices.adequateshopuserapi.views.imageupload.ImageUploadActivity"
+            android:exported="false" />
         <activity
             android:name="com.example.webservices.adequateshopuserapi.views.home.CreateUserActivity"
             android:exported="false" />
