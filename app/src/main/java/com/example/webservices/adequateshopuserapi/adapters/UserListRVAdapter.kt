@@ -29,6 +29,8 @@ class UserListRVAdapter(private var userList: List<UserInfo>) :
         var tvEmail = binding.tvUserEmail
 
         init {
+            binding
+
             binding.root.setOnLongClickListener {
                 val userId = userList[adapterPosition].id
                 with(binding.root.context) {

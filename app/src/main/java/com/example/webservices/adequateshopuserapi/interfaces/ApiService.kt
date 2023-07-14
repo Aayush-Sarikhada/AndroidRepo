@@ -8,7 +8,6 @@ import com.example.webservices.adequateshopuserapi.models.userList.UsersList
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
-import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -23,17 +22,15 @@ interface ApiService {
 
     @GET("/api/users")
     suspend fun getUsersOn(
-        @Query("page") page: Int,
-        @Header("Authorization") authorization: String
+        @Query("page") page: Int
     ): Response<UsersList>
 
     @GET("/api/users/{id}")
     suspend fun getUserWith(
-        @Path("id") id: Int,
-        @Header("Authorization") authorization: String
+        @Path("id") id: Int
     ): Response<UserInfo>
 
     @POST("/api/users")
-    suspend fun createUser(@Body userInfo: NewUserInfo, @Header("Authorization") authorization: String): Response<UserInfo>
+    suspend fun createUser(@Body userInfo: NewUserInfo): Response<UserInfo>
 
 }

@@ -17,16 +17,16 @@ class UsersRepository(private val apiService: ApiService) {
         return apiService.loginUser(authRequest).body()
     }
 
-    suspend fun getUsers(page: Int, authorizationToken: String): UsersList? {
-        return apiService.getUsersOn(page,authorizationToken).body()
+    suspend fun getUsers(page: Int): UsersList? {
+        return apiService.getUsersOn(page).body()
     }
 
-    suspend fun getUserWith(id: Int, authorizationToken: String): UserInfo? {
-        return apiService.getUserWith(id,authorizationToken).body()
+    suspend fun getUserWith(id: Int): UserInfo? {
+        return apiService.getUserWith(id).body()
     }
 
-    suspend fun createUser(newUser: NewUserInfo, authorization: String): UserInfo? {
-        return apiService.createUser(newUser, authorization).body()
+    suspend fun createUser(newUser: NewUserInfo): UserInfo? {
+        return apiService.createUser(newUser).body()
     }
 
 }

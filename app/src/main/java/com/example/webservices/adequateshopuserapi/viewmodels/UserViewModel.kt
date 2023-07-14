@@ -16,8 +16,6 @@ class UserViewModel @Inject constructor(
     private val usersRepository: UsersRepository
 ) : ViewModel() {
     var currentPage = 0
-    private val _perPage = MutableLiveData<Int>()
-    var perPage: LiveData<Int> = _perPage
     private val _userList = MutableLiveData<List<UserInfo>>()
     var userList: LiveData<List<UserInfo>> = _userList
     private val _user = MutableLiveData<UserInfo>()
@@ -25,30 +23,29 @@ class UserViewModel @Inject constructor(
     private val _isLoading = MutableLiveData(false)
     var isLoading: LiveData<Boolean> = _isLoading
 
-    fun getUsersOn(page: Int, authorization: String) {
+    fun getUsersOn(page: Int) {
         _isLoading.value = true
         viewModelScope.launch {
-            val response = usersRepository.getUsers(page, authorization)
+            val response = usersRepository.getUsers(page)
             response?.let {
-                _perPage.postValue(response.perPage)
                 _userList.postValue(response.data)
                 _isLoading.postValue(false)
             }
         }
     }
 
-    fun getUserWith(id: Int, authorization: String) {
+    fun getUserWith(id: Int) {
         viewModelScope.launch {
-            val response = usersRepository.getUserWith(id, authorization)
+            val response = usersRepository.getUserWith(id)
             response?.let {
                 _user.postValue(it)
             }
         }
     }
 
-    fun createUser(newUser: NewUserInfo, authorization: String) {
+    fun createUser(newUser: NewUserInfo) {
         viewModelScope.launch {
-            val response = usersRepository.createUser(newUser, authorization)
+            val response = usersRepository.createUser(newUser)
             response?.let {
                 _user.postValue(it)
             }

@@ -53,7 +53,7 @@ class CreateUserActivity : BaseActivity() {
             val location = binding.etUserLocation.text.toString()
             if (name.isNotEmpty() && email.isNotEmpty() && location.isNotEmpty()) {
                 val newUser = NewUserInfo(email, location, name)
-                userViewModel.createUser(newUser, bearerToken)
+                userViewModel.createUser(newUser)
             }
         }
     }

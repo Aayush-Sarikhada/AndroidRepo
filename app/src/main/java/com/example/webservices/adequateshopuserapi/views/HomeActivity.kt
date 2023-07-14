@@ -47,7 +47,7 @@ class HomeActivity : AppCompatActivity() {
 
     private fun getUsersList() {
         val nextPage = ++userViewModel.currentPage
-        userViewModel.getUsersOn(nextPage, bearerToken)
+        userViewModel.getUsersOn(nextPage)
     }
 
     private fun getBearerToken() {

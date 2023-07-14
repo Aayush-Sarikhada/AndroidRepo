@@ -10,6 +10,16 @@
         android:padding="16dp"
         tools:context=".views.CreateUserActivity">
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/create_user_on_server"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/tilUserName"
+            app:layout_constraintEnd_toEndOf="@id/tilUserName"
+            app:layout_constraintStart_toStartOf="@id/tilUserName" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilUserName"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"

@@ -53,7 +53,7 @@ class UserDetailActivity : BaseActivity() {
 
     private fun getUser(id: Int) {
         if (id != -1) {
-            userViewModel.getUserWith(id, bearerToken)
+            userViewModel.getUserWith(id)
         }
     }
 

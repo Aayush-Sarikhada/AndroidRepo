@@ -22,4 +22,5 @@
     <string name="location">Location:</string>
     <string name="user_created_successfully">User created successfully</string>
     <string name="create_user">Create User</string>
+    <string name="create_user_on_server">Create User On Server</string>
 </resources>
