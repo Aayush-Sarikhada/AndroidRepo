@@ -1,14 +1,17 @@
 package com.example.android.main.adapter
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.R
 import com.example.android.databinding.RowStartScreenBinding
 import com.example.android.main.model.ScreenType
 
-class UIComponentsRVAdapter(private val dataList: List<ScreenType>) :
+class UIComponentsRVAdapter(private val context: Context, private val dataList: List<ScreenType<AppCompatActivity>>) :
     RecyclerView.Adapter<UIComponentsRVAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: RowStartScreenBinding) : RecyclerView.ViewHolder(view.root) {
@@ -16,7 +19,7 @@ class UIComponentsRVAdapter(private val dataList: List<ScreenType>) :
 
         init {
             btnStartActivity.setOnClickListener {
-                TODO("Add moving activity code")
+                context.startActivity(Intent(context, dataList[absoluteAdapterPosition].startActivity))
             }
         }
     }

@@ -8,6 +8,7 @@ import com.example.android.R
 import com.example.android.databinding.ActivityMainBinding
 import com.example.android.main.adapter.UIComponentsRVAdapter
 import com.example.android.main.model.ScreenType
+import com.example.android.stockexchangeui.StockExchangeActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,36 +24,14 @@ class MainActivity : AppCompatActivity() {
         binding.rvActivities.apply {
             layoutManager =
                 LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL, false)
-            adapter = UIComponentsRVAdapter(getActivitiesDataList())
+            adapter = UIComponentsRVAdapter(this@MainActivity, getActivitiesDataList())
         }
 
     }
 
-    private fun getActivitiesDataList(): List<ScreenType> {
+    private fun getActivitiesDataList(): List<ScreenType<AppCompatActivity>> {
         return listOf(
-            ScreenType(0, name = "temp1", MainActivity::class.java),
-            ScreenType(1, name = "temp2", MainActivity::class.java),
-            ScreenType(2, name = "temp3", MainActivity::class.java),
-            ScreenType(3, name = "temp4", MainActivity::class.java),
-            ScreenType(4, name = "temp5", MainActivity::class.java),
-            ScreenType(4, name = "temp5", MainActivity::class.java),
-            ScreenType(4, name = "temp5", MainActivity::class.java),
-            ScreenType(4, name = "temp5", MainActivity::class.java),
-            ScreenType(4, name = "temp5", MainActivity::class.java),
-            ScreenType(4, name = "temp5", MainActivity::class.java),
-            ScreenType(4, name = "temp5", MainActivity::class.java),
-            ScreenType(4, name = "temp5", MainActivity::class.java),
-            ScreenType(4, name = "temp5", MainActivity::class.java),
-            ScreenType(4, name = "temp5", MainActivity::class.java),
-            ScreenType(4, name = "temp5", MainActivity::class.java),
-            ScreenType(4, name = "temp5", MainActivity::class.java),
-            ScreenType(4, name = "temp5", MainActivity::class.java),
-            ScreenType(4, name = "temp5", MainActivity::class.java),
-            ScreenType(4, name = "temp5", MainActivity::class.java),
-            ScreenType(4, name = "temp5", MainActivity::class.java),
-            ScreenType(4, name = "temp5", MainActivity::class.java),
-            ScreenType(4, name = "temp5", MainActivity::class.java),
-            ScreenType(4, name = "temp5", MainActivity::class.java),
+            ScreenType(0, name = "Stock exchange UI", StockExchangeActivity::class.java)
         )
     }
 }

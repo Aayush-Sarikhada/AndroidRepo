@@ -1,9 +1,7 @@
 package com.example.android.main.model
 
-import com.example.android.main.views.MainActivity
-
-data class ScreenType(
+data class ScreenType<out T>(
     val id: Int,
     val name: String,
-    val startActivity: Class<MainActivity>
+    val startActivity: Class<out T>
 )
