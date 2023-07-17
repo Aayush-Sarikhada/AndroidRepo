@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:padding="8dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/nft_image"
+            android:layout_width="146dp"
+            android:layout_height="126dp"
+            android:scaleType="center"
+            android:src="@drawable/image_not_found_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/nft_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/nft_name"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/nft_id"
+            app:layout_constraintHorizontal_weight="0.7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nft_image" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/nft_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/nft_id_dummy"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/nft_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.3"
+            app:layout_constraintStart_toEndOf="@+id/nft_name"
+            app:layout_constraintTop_toTopOf="@id/nft_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/price_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/price_label"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/nft_name"
+            app:layout_constraintTop_toBottomOf="@id/nft_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/single_nft_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:gravity="end"
+            android:maxLines="1"
+            android:text="@string/_0_18_eth"
+            android:textColor="@color/nft_collection_price_color"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/single_nft_price"
+            app:layout_constraintEnd_toEndOf="@id/nft_id"
+            app:layout_constraintStart_toEndOf="@+id/price_label" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

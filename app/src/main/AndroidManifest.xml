@@ -27,6 +27,15 @@
             android:exported="false"
             android:theme="@style/Theme.StockExchangeUI" />
 
+        <activity
+            android:name=".nftbazaar.views.AuthenticationActivity"
+            android:exported="false"
+            android:theme="@style/Base.Theme.NFTBazaar" />
+        <activity
+            android:name=".nftbazaar.views.HomeActivity"
+            android:exported="false"
+            android:theme="@style/Base.Theme.NFTBazaar" />
+
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@ import com.example.android.R
 import com.example.android.databinding.ActivityMainBinding
 import com.example.android.main.adapter.UIComponentsRVAdapter
 import com.example.android.main.model.ScreenType
+import com.example.android.nftbazaar.views.AuthenticationActivity
 import com.example.android.stockexchangeui.StockExchangeActivity
 
 class MainActivity : AppCompatActivity() {
@@ -31,7 +32,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun getActivitiesDataList(): List<ScreenType<AppCompatActivity>> {
         return listOf(
-            ScreenType(0, name = "Stock exchange UI", StockExchangeActivity::class.java)
+            ScreenType(0, name = "Stock exchange UI", StockExchangeActivity::class.java),
+            ScreenType(0, name = "NFT Bazaar", AuthenticationActivity::class.java)
         )
     }
 }
