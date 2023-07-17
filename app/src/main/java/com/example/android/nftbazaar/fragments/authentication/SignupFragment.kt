@@ -1,4 +1,4 @@
-package com.example.androidpracticeproject.fragments.authentication
+package com.example.android.nftbazaar.fragments.authentication
 
 import android.content.Context
 import android.content.Intent
@@ -18,6 +18,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.android.R
 import com.example.android.databinding.FragmentSignupBinding
 import com.example.android.nftbazaar.Constant
+import com.example.android.nftbazaar.utils.FieldsValidator
 import com.example.android.nftbazaar.views.HomeActivity
 
 class SignupFragment : Fragment() {
@@ -37,20 +38,29 @@ class SignupFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        btnLogin = binding.loginButton
+        btnLogin = binding.btnLogin
         navController = findNavController()
+        tvAppTitleLogo = binding.tvSignupAppNameLogo
+        setUpOnClickListeners()
+        colorAppTitleLogo()
+    }
+
+    private fun setUpOnClickListeners() {
         btnLogin.setOnClickListener {
             navController.popBackStack()
         }
 
-        binding.signupButton.setOnClickListener {
+        binding.btnSignup.setOnClickListener {
             val fullName = binding.etFullName.text.toString()
-            val emailAddress = binding.etEmailAddress.text.toString()
-            val password = binding.etPassword.text.toString()
+            val emailAddress = binding.etSignupEmail.text.toString()
+            val password = binding.etSignupPassword.text.toString()
             val gender =
                 binding.rgGender.findViewById<RadioButton>(binding.rgGender.checkedRadioButtonId).text
 
-            if (fullName.isNotEmpty() && emailAddress.isNotEmpty() && password.isNotEmpty() && gender.isNotEmpty()) {
+            if (FieldsValidator.validateName(fullName) &&
+                FieldsValidator.validateEmail(emailAddress) &&
+                FieldsValidator.validatePassword(password)
+            ) {
                 val pref = requireContext().getSharedPreferences(
                     Constant.PREFERENCE,
                     Context.MODE_PRIVATE
@@ -59,20 +69,28 @@ class SignupFragment : Fragment() {
                     .putString(Constant.Keys.PREF_KEY_FULL_NAME, fullName)
                     .putString(Constant.Keys.PREF_KEY_EMAIL, emailAddress)
                     .putString(Constant.Keys.PREF_KEY_PASSWORD, password)
+                    .putString(Constant.Keys.PREF_KEY_GENDER, gender.toString())
                     .putBoolean(Constant.Keys.SP_KEY_IS_USER_LOGGED_IN, true)
                     .apply()
                 Toast.makeText(
                     requireContext(),
-                    getString(R.string.signUp_success),
+                    getString(R.string.signup_success),
                     Toast.LENGTH_SHORT
                 ).show()
                 startActivity(Intent(requireActivity(), HomeActivity::class.java))
                 requireActivity().finish()
+            } else {
+                val errorMsg =
+                    if (!FieldsValidator.validateEmail(emailAddress)) {
+                        Constant.Strings.EMAIL_ERROR
+                    } else if (!FieldsValidator.validateName(fullName)) {
+                        Constant.Strings.NAME_ERROR
+                    } else {
+                        Constant.Strings.PASSWORD_ERROR
+                    }
+                Toast.makeText(requireContext(), errorMsg, Toast.LENGTH_SHORT).show()
             }
         }
-
-        tvAppTitleLogo = binding.appNameLogo
-        colorAppTitleLogo()
     }
 
     private fun colorAppTitleLogo() {
@@ -82,8 +100,8 @@ class SignupFragment : Fragment() {
             0f,
             tvAppTitleLogo.paint.textSize,
             intArrayOf(
-                resources.getColor(R.color.redColor, null),
-                resources.getColor(R.color.purpleColor, null)
+                resources.getColor(R.color.red_color, null),
+                resources.getColor(R.color.purple_color, null)
             ),
             floatArrayOf(0f, 1f),
             Shader.TileMode.CLAMP

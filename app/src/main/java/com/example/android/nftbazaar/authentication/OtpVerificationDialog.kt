@@ -88,8 +88,8 @@ class OtpVerificationDialog(private val context: Context, private val mobileNumb
         otpEt2 = findViewById(R.id.otp_et2)
         otpEt3 = findViewById(R.id.otp_et3)
         otpEt4 = findViewById(R.id.otp_et4)
-        tvResendBtn = findViewById(R.id.resendBtn)
-        btnVerify = findViewById(R.id.verify_button)
+        tvResendBtn = findViewById(R.id.btn_resend)
+        btnVerify = findViewById(R.id.btn_verify)
         tvMobileNumber = findViewById(R.id.mobile_number)
 
         otpEt1.addTextChangedListener(textWatcher)

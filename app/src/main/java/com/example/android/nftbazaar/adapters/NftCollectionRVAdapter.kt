@@ -22,13 +22,13 @@ class NftCollectionRVAdapter(
 ) : RecyclerView.Adapter<NftCollectionRVAdapter.ViewHolder>() {
 
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-        val imgFirstNFT: ImageView = view.findViewById(R.id.first_nft_img)
-        val imgSecondNFT: ImageView = view.findViewById(R.id.second_nft_img)
-        val imgThirdNFT: ImageView = view.findViewById(R.id.third_nft_img)
-        val tvPrice: TextView = view.findViewById(R.id.nft_price)
-        val tvNftCollectionName: TextView = view.findViewById(R.id.collection_name)
-        val tvCreatorsName: TextView = view.findViewById(R.id.creator_name)
-        val btnBuyNow: Button = view.findViewById(R.id.buy_now_btn)
+        val imgFirstNFT: ImageView = view.findViewById(R.id.img_first_nft)
+        val imgSecondNFT: ImageView = view.findViewById(R.id.img_second_nft)
+        val imgThirdNFT: ImageView = view.findViewById(R.id.img_third_nft)
+        val tvPrice: TextView = view.findViewById(R.id.tv_nft_price)
+        val tvNftCollectionName: TextView = view.findViewById(R.id.tv_collection_name)
+        val tvCreatorsName: TextView = view.findViewById(R.id.tv_creator_name)
+        val btnBuyNow: Button = view.findViewById(R.id.btn_buy_now)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

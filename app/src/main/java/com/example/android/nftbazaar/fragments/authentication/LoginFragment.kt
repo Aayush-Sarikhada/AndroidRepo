@@ -47,26 +47,28 @@ class LoginFragment : Fragment() {
             requireActivity().finish()
         }
 
-        binding.signupButton.setOnClickListener {
+        binding.btnSignUp.setOnClickListener {
             navController
                 .navigate(LoginFragmentDirections.actionLoginFragmentToSignupFragment())
         }
 
-        binding.forgotPassword.setOnClickListener {
+        binding.tvForgotPassword.setOnClickListener {
             navController
                 .navigate(LoginFragmentDirections.actionLoginFragmentToForgotPasswordFragment())
         }
 
-        binding.continueWithGoogle.setOnClickListener {
+        binding.btnContinueWithGoogle.setOnClickListener {
             Toast.makeText(context, getString(R.string.continue_with_google), Toast.LENGTH_SHORT)
                 .show()
         }
 
-        binding.loginButton.setOnClickListener {
+        binding.btnLogin.setOnClickListener {
             strEmail = binding.tilEmail.editText?.text.toString()
-            strPassword = binding.tilPassword.editText?.text.toString()
-            if (validateFields() && validateUser()) {
+            strPassword = binding.etPassword.text.toString()
+            if(rememberUser) {
                 storeRememberStateInSP()
+            }
+            if (validateFields() && validateUser()) {
                 startActivity(Intent(requireActivity(), HomeActivity::class.java))
                 requireActivity().finish()
             }
@@ -78,8 +80,8 @@ class LoginFragment : Fragment() {
     }
 
     private fun validateUser(): Boolean {
-        if (sharedPreferences.contains(strEmail)) {
-            if (strPassword == sharedPreferences.getString(strEmail, "")) {
+        if (sharedPreferences.contains(Constant.Keys.PREF_KEY_EMAIL)) {
+            if (strPassword == sharedPreferences.getString(Constant.Keys.PREF_KEY_PASSWORD, "")) {
                 return true
             }
         }
@@ -91,28 +93,29 @@ class LoginFragment : Fragment() {
     }
 
     private fun checkIfUserAlreadyLoggedIn(): Boolean {
-        return sharedPreferences.getBoolean(Constant.SP_KEY_IS_USER_LOGGED_IN, false)
+        return sharedPreferences.getBoolean(Constant.Keys.SP_KEY_IS_USER_LOGGED_IN, false)
     }
 
     private fun storeRememberStateInSP() {
         sharedPreferences.edit()
-            .putBoolean(Constant.SP_KEY_IS_USER_LOGGED_IN, rememberUser)
+            .putBoolean(Constant.Keys.SP_KEY_IS_USER_LOGGED_IN, rememberUser)
             .apply()
     }
+
     private fun colorAppTitleLogo() {
         val textShader: Shader = LinearGradient(
             0f,
             0f,
             0f,
-            binding.appNameLogo.paint.textSize,
+            binding.tvAppNameLogo.paint.textSize,
             intArrayOf(
-                resources.getColor(R.color.redColor, null),
-                resources.getColor(R.color.purpleColor, null)
+                resources.getColor(R.color.red_color, null),
+                resources.getColor(R.color.purple_color, null)
             ),
             floatArrayOf(0f, 1f),
             Shader.TileMode.CLAMP
         )
-        binding.appNameLogo.paint.shader = textShader
+        binding.tvAppNameLogo.paint.shader = textShader
     }
 
 }

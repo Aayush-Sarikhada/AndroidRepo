@@ -17,7 +17,6 @@ import com.example.android.nftbazaar.authentication.OtpVerificationDialog
 class ForgotPasswordFragment : Fragment() {
 
     private lateinit var binding: FragmentForgotPasswordBinding
-
     private lateinit var btnSendOTP: Button
     private lateinit var etMobileNumber: EditText
     private lateinit var btnBackToSignIn: Button

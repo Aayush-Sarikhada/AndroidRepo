@@ -1,4 +1,4 @@
-package com.example.androidpracticeproject.fragments.home
+package com.example.android.nftbazaar.fragments.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.databinding.FragmentHomeScreenBinding
 import com.example.android.nftbazaar.adapters.NftCollectionRVAdapter
-import com.example.android.nftbazaar.utils.VerticalSpaceItemDecoration
 import com.example.android.nftbazaar.home.NFTCollectionDataModel
+import com.example.android.nftbazaar.utils.VerticalSpaceItemDecoration
 
 class HomeScreenFragment : Fragment() {
 
