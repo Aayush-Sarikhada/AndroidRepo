@@ -2,7 +2,6 @@ package com.example.webservices.adequateshopuserapi.adapters
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,9 +16,6 @@ import com.squareup.picasso.Picasso
 
 class UserListRVAdapter(private var userList: List<UserInfo>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-    private val VIEW_TYPE_ITEM = 0
-    private val VIEW_TYPE_LOADING = 1
 
     inner class ItemViewHolder(binding: RowUserDataBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -65,7 +61,7 @@ class UserListRVAdapter(private var userList: List<UserInfo>) :
         if (holder is ItemViewHolder) {
             populateItemRows(holder, position)
         } else if (holder is LoadingViewHolder) {
-            showLoadingView(holder, position)
+            showLoadingView(holder)
         }
     }
 
@@ -74,11 +70,8 @@ class UserListRVAdapter(private var userList: List<UserInfo>) :
     }
 
     fun submitUserList(newList: List<UserInfo>) {
-
-        Log.d("DEBUG IN RVADAPTER", newList.toString())
         val oldList = userList
         userList = newList
-        Log.d("DEBUG IN RVADAPTER", userList.toString())
         notifyItemRangeInserted(oldList.size - 1, newList.size)
     }
 
@@ -90,7 +83,7 @@ class UserListRVAdapter(private var userList: List<UserInfo>) :
         }
     }
 
-    private fun showLoadingView(holder: LoadingViewHolder, position: Int) {
+    private fun showLoadingView(holder: LoadingViewHolder) {
         holder.progressUsers.visibility = View.VISIBLE
     }
 
@@ -101,6 +94,11 @@ class UserListRVAdapter(private var userList: List<UserInfo>) :
         holder.tvEmail.text = "Email: ${userList[position].email}"
         holder.tvName.text = "Name: ${userList[position].name}"
         holder.tvCreatedOn.text = "Created on: ${userList[position].createdAt}"
+    }
+
+    companion object {
+        private const val VIEW_TYPE_ITEM = 0
+        private const val VIEW_TYPE_LOADING = 1
     }
 
 }
