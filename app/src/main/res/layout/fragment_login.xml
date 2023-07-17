@@ -10,41 +10,42 @@
         tools:context=".fragments.authentication.LoginFragment">
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/app_name_logo"
+            android:id="@+id/tv_app_name_logo"
             style="@style/app_title_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="@dimen/margin_forty_eight_dp"
             android:text="@string/nft_bazaar"
-            app:layout_constraintEnd_toStartOf="@id/signup_button"
+            app:layout_constraintEnd_toStartOf="@id/btn_sign_up"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/signup_button"
+            android:id="@+id/btn_sign_up"
             style="@style/button_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/signup"
-            app:layout_constraintBottom_toBottomOf="@id/app_name_logo"
+            app:layout_constraintBottom_toBottomOf="@id/tv_app_name_logo"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/app_name_logo" />
+            app:layout_constraintStart_toEndOf="@id/tv_app_name_logo" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_email"
             style="@style/Theme.app.EditTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_twenty_dp"
             app:endIconCheckable="false"
             app:endIconDrawable="@drawable/outline_email_24"
             app:endIconMode="custom"
-            app:layout_constraintEnd_toEndOf="@id/signup_button"
-            app:layout_constraintStart_toStartOf="@id/app_name_logo"
-            app:layout_constraintTop_toBottomOf="@id/app_name_logo">
+            app:layout_constraintEnd_toEndOf="@id/btn_sign_up"
+            app:layout_constraintStart_toStartOf="@id/tv_app_name_logo"
+            app:layout_constraintTop_toBottomOf="@id/tv_app_name_logo">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_email"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/email_address"
@@ -53,19 +54,18 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_password"
+            android:id="@+id/til_signup_password"
             style="@style/Theme.app.EditTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:endIconCheckable="true"
-            app:endIconDrawable="@drawable/baseline_remove_red_eye_24"
+            android:layout_marginTop="@dimen/margin_twenty_dp"
             app:endIconMode="password_toggle"
             app:layout_constraintEnd_toEndOf="@id/til_email"
             app:layout_constraintStart_toStartOf="@id/til_email"
             app:layout_constraintTop_toBottomOf="@id/til_email">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/password"
@@ -78,79 +78,79 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/remember_me"
-            app:layout_constraintBottom_toBottomOf="@id/forgot_password"
-            app:layout_constraintStart_toStartOf="@id/til_password"
-            app:layout_constraintTop_toTopOf="@id/forgot_password" />
+            app:layout_constraintBottom_toBottomOf="@id/tv_forgot_password"
+            app:layout_constraintStart_toStartOf="@id/til_signup_password"
+            app:layout_constraintTop_toTopOf="@id/tv_forgot_password" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/forgot_password"
+            android:id="@+id/tv_forgot_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="@dimen/margin_twelve_dp"
             android:text="@string/forgot_password"
             android:textColor="@color/black"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@id/til_password"
-            app:layout_constraintTop_toBottomOf="@id/til_password" />
+            android:textSize="@dimen/text_size_twelve"
+            app:layout_constraintEnd_toEndOf="@id/til_signup_password"
+            app:layout_constraintTop_toBottomOf="@id/til_signup_password" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/login_button"
+            android:id="@+id/btn_login"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="#705FAA"
+            android:layout_marginTop="@dimen/margin_twenty_four_dp"
+            android:backgroundTint="@color/primary"
             android:text="@string/log_in"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="12sp"
-            app:cornerRadius="8dp"
-            app:layout_constraintEnd_toEndOf="@id/til_password"
-            app:layout_constraintStart_toStartOf="@id/til_password"
-            app:layout_constraintTop_toBottomOf="@id/forgot_password" />
+            android:textSize="@dimen/text_size_twelve"
+            app:cornerRadius="@dimen/corner_radius_eight_dp"
+            app:layout_constraintEnd_toEndOf="@id/til_signup_password"
+            app:layout_constraintStart_toStartOf="@id/til_signup_password"
+            app:layout_constraintTop_toBottomOf="@id/tv_forgot_password" />
 
         <View
-            android:id="@+id/first_divider_line"
+            android:id="@+id/view_divider_line_one"
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="@dimen/margin_twenty_eight_dp"
             android:background="@color/black"
-            app:layout_constraintEnd_toStartOf="@id/or_divider"
-            app:layout_constraintStart_toStartOf="@id/login_button"
-            app:layout_constraintTop_toBottomOf="@id/login_button" />
+            app:layout_constraintEnd_toStartOf="@id/tv_or_divider"
+            app:layout_constraintStart_toStartOf="@id/btn_login"
+            app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
         <TextView
-            android:id="@+id/or_divider"
+            android:id="@+id/tv_or_divider"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
+            android:layout_marginHorizontal="@dimen/margin_thirty_two_dp"
             android:text="@string/or"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@id/first_divider_line"
-            app:layout_constraintEnd_toStartOf="@id/second_divider_line"
-            app:layout_constraintStart_toEndOf="@id/first_divider_line"
-            app:layout_constraintTop_toTopOf="@id/first_divider_line" />
+            app:layout_constraintBottom_toBottomOf="@id/view_divider_line_one"
+            app:layout_constraintEnd_toStartOf="@id/view_divider_line_two"
+            app:layout_constraintStart_toEndOf="@id/view_divider_line_one"
+            app:layout_constraintTop_toTopOf="@id/view_divider_line_one" />
 
         <View
-            android:id="@+id/second_divider_line"
+            android:id="@+id/view_divider_line_two"
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:background="@color/black"
-            app:layout_constraintBottom_toBottomOf="@id/or_divider"
-            app:layout_constraintEnd_toEndOf="@id/signup_button"
-            app:layout_constraintStart_toEndOf="@id/or_divider"
-            app:layout_constraintTop_toTopOf="@id/or_divider" />
+            app:layout_constraintBottom_toBottomOf="@id/tv_or_divider"
+            app:layout_constraintEnd_toEndOf="@id/btn_sign_up"
+            app:layout_constraintStart_toEndOf="@id/tv_or_divider"
+            app:layout_constraintTop_toTopOf="@id/tv_or_divider" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/continue_with_google"
+            android:id="@+id/btn_continue_with_google"
             style="@style/button_style"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="@dimen/margin_twenty_four_dp"
             android:text="@string/continue_with_google"
             app:icon="@drawable/google_icon"
-            app:layout_constraintEnd_toEndOf="@id/login_button"
-            app:layout_constraintStart_toStartOf="@id/login_button"
-            app:layout_constraintTop_toBottomOf="@id/first_divider_line" />
+            app:layout_constraintEnd_toEndOf="@id/btn_login"
+            app:layout_constraintStart_toStartOf="@id/btn_login"
+            app:layout_constraintTop_toBottomOf="@id/view_divider_line_one" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

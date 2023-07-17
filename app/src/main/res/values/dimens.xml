@@ -98,4 +98,38 @@
     <!-- floating action button dimensions -->
     <dimen name="fab_elevation">4dp</dimen>
 
+    <!--    nft bazaar dimensions     -->
+    <dimen name="dialog_otp_padding">10dp</dimen>
+    <dimen name="dialog_otp_card_elevation">0dp</dimen>
+    <dimen name="dialog_otp_padding_bottom">10dp</dimen>
+
+    <dimen name="nft_img_width">146dp</dimen>
+    <dimen name="nft_img_height">126dp</dimen>
+
+    <dimen name="margin_twenty_dp">20dp</dimen>
+    <dimen name="text_size_twenty_five">25sp</dimen>
+    <dimen name="text_size_thirty">30sp</dimen>
+    <dimen name="text_size_eighteen">18sp</dimen>
+    <dimen name="text_size_twelve">12sp</dimen>
+    <dimen name="text_size_sixteen">16sp</dimen>
+    <dimen name="text_size_fourteen">14sp</dimen>
+
+    <dimen name="margin_four_dp">4dp</dimen>
+    <dimen name="margin_ten_dp">10dp</dimen>
+    <dimen name="margin_seventy_four_dp">74dp</dimen>
+    <dimen name="margin_twelve_dp">12dp</dimen>
+    <dimen name="margin_forty_eight_dp">48dp</dimen>
+    <dimen name="margin_twenty_four_dp">24dp</dimen>
+    <dimen name="margin_twenty_eight_dp">28dp</dimen>
+    <dimen name="margin_thirty_two_dp">32dp</dimen>
+    <dimen name="margin_thirty_dp">30dp</dimen>
+    <dimen name="margin_sixteen_dp">16dp</dimen>
+    <dimen name="margin_eight_dp">8dp</dimen>
+
+    <dimen name="padding_thirty_dp">30dp</dimen>
+
+    <dimen name="corner_radius_eight_dp">8dp</dimen>
+    <dimen name="corner_radius_twelve_dp">12dp</dimen>
+
+    <dimen name="fifty_dp">50dp</dimen>
 </resources>

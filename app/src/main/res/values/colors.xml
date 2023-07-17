@@ -25,7 +25,11 @@
     <color name="primary">#705FAA</color>
     <color name="back_to_sign_in_color">#787876</color>
     <color name="nft_collection_price_color">#25D76C</color>
+    <color name="nft_card_background_color">#DBE2E4</color>
     <color name="button_background_color">#705FAA</color>
-    <color name="redColor">#FF3D00</color>
-    <color name="purpleColor">#705FAA</color>
+    <color name="red_color">#FF3D00</color>
+    <color name="purple_color">#705FAA</color>
+    <color name="text_color_black">#CC000000</color>
+    <color name="text_color_light_black">#80000000</color>
+    <color name="text_color_button_resend">#99000000</color>
 </resources>

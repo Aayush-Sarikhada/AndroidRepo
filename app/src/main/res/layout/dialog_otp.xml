@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="0dp"
+    app:cardCornerRadius="@dimen/dialog_otp_padding"
+    app:cardElevation="@dimen/dialog_otp_card_elevation"
     app:cardUseCompatPadding="true"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -14,72 +14,73 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingBottom="10dp">
+        android:paddingBottom="@dimen/dialog_otp_padding_bottom">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginStart="@dimen/margin_twenty_dp"
+            android:layout_marginTop="@dimen/margin_twenty_dp"
+            android:layout_marginEnd="@dimen/margin_twenty_dp"
             android:text="@string/otp_verification"
-            android:textColor="#CC000000"
-            android:textSize="25sp"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_size_twenty_five"
             android:textStyle="bold" />
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginStart="@dimen/margin_twenty_dp"
+            android:layout_marginTop="@dimen/margin_twenty_dp"
+            android:layout_marginEnd="@dimen/margin_twenty_dp"
             android:text="@string/we_have_sent_verification_code_to"
-            android:textColor="#80000000" />
+            android:textColor="@color/text_color_light_black" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/mobile_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginStart="@dimen/margin_twenty_dp"
+            android:layout_marginTop="@dimen/margin_four_dp"
+            android:maxLength="11"
             android:text="@string/dummy_mobile_number"
-            android:textColor="#CC000000"
+            android:textColor="@color/text_color_black"
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginStart="@dimen/margin_twenty_dp"
+            android:layout_marginTop="@dimen/margin_twenty_dp"
+            android:layout_marginEnd="@dimen/margin_twenty_dp"
             android:gravity="center"
             android:orientation="horizontal"
-            android:weightSum="4">
+            android:weightSum="@integer/otp_dialog_weight_sum">
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/otp_et1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="1"
+                android:layout_width="@dimen/fifty_dp"
+                android:layout_height="@dimen/fifty_dp"
+                android:layout_marginEnd="@dimen/margin_ten_dp"
+                android:layout_weight="@integer/otp_dialog_layout_weight"
                 android:background="@drawable/otp_field_background"
                 android:gravity="center"
                 android:inputType="number"
                 android:maxLength="1"
                 android:maxLines="1"
-                android:textCursorDrawable="@drawable/shape_cursor_drawable"
                 android:tag="1"
                 android:textColor="@color/black"
-                android:textSize="30sp"
+                android:textCursorDrawable="@drawable/shape_cursor_drawable"
+                android:textSize="@dimen/text_size_thirty"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/otp_et2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="1"
+                android:layout_width="@dimen/fifty_dp"
+                android:layout_height="@dimen/fifty_dp"
+                android:layout_marginStart="@dimen/margin_ten_dp"
+                android:layout_marginEnd="@dimen/margin_ten_dp"
+                android:layout_weight="@integer/otp_dialog_layout_weight"
                 android:background="@drawable/otp_field_background"
                 android:gravity="center"
                 android:inputType="number"
@@ -87,16 +88,16 @@
                 android:maxLines="1"
                 android:tag="2"
                 android:textColor="@color/black"
-                android:textSize="30sp"
+                android:textSize="@dimen/text_size_thirty"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/otp_et3"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="1"
+                android:layout_width="@dimen/fifty_dp"
+                android:layout_height="@dimen/fifty_dp"
+                android:layout_marginStart="@dimen/margin_ten_dp"
+                android:layout_marginEnd="@dimen/margin_ten_dp"
+                android:layout_weight="@integer/otp_dialog_layout_weight"
                 android:background="@drawable/otp_field_background"
                 android:gravity="center"
                 android:inputType="number"
@@ -104,15 +105,15 @@
                 android:maxLines="1"
                 android:tag="3"
                 android:textColor="@color/black"
-                android:textSize="30sp"
+                android:textSize="@dimen/text_size_thirty"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/otp_et4"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
+                android:layout_width="@dimen/fifty_dp"
+                android:layout_height="@dimen/fifty_dp"
+                android:layout_marginStart="@dimen/margin_ten_dp"
+                android:layout_weight="@integer/otp_dialog_layout_weight"
                 android:background="@drawable/otp_field_background"
                 android:gravity="center"
                 android:inputType="number"
@@ -120,33 +121,33 @@
                 android:maxLines="1"
                 android:tag="4"
                 android:textColor="@color/black"
-                android:textSize="30sp"
+                android:textSize="@dimen/text_size_thirty"
                 android:textStyle="bold" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/resendBtn"
+            android:id="@+id/btn_resend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="@dimen/margin_twenty_dp"
+            android:layout_marginTop="@dimen/margin_twenty_dp"
             android:text="@string/resend_code"
-            android:textColor="#99000000" />
+            android:textColor="@color/text_color_button_resend" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/verify_button"
+            android:id="@+id/btn_verify"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="#705FAA"
+            android:layout_marginTop="@dimen/margin_twenty_dp"
+            android:backgroundTint="@color/primary"
             android:enabled="false"
-            android:paddingStart="30dp"
-            android:paddingEnd="30dp"
+            android:paddingStart="@dimen/padding_thirty_dp"
+            android:paddingEnd="@dimen/padding_thirty_dp"
             android:text="@string/verify"
-            android:textColor="#FFFFFFFF"
-            app:cornerRadius="8dp" />
+            android:textColor="@color/white"
+            app:cornerRadius="@dimen/corner_radius_eight_dp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

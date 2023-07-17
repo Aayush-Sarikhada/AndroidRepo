@@ -9,7 +9,7 @@
         tools:context=".fragments.home.NftCollectionFragment">
 
         <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchView"
+            android:id="@+id/search_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:iconifiedByDefault="false"
@@ -22,14 +22,14 @@
             android:id="@+id/nft_heading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="@dimen/margin_twenty_four_dp"
+            android:layout_marginTop="@dimen/margin_sixteen_dp"
             android:fontFamily="@font/inter_font"
             android:text="@string/nfts"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/searchView" />
+            app:layout_constraintTop_toBottomOf="@id/search_view" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/nft_recycler_view"

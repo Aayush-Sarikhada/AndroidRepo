@@ -94,4 +94,6 @@
     <string name="nfts">NFTs</string>
     <string name="log_in">Log In</string>
     <string name="create_your_account">Create your account</string>
+    <string name="signup_success">Sign up success!</string>
+
 </resources>
