@@ -8,8 +8,8 @@ import com.example.javapractice.R
 import com.example.javapractice.databinding.ActivityCreateUserBinding
 import com.example.webservices.adequateshopuserapi.Constants
 import com.example.webservices.adequateshopuserapi.base.BaseActivity
-import com.example.webservices.adequateshopuserapi.viewmodels.UserViewModel
 import com.example.webservices.adequateshopuserapi.models.NewUserInfo
+import com.example.webservices.adequateshopuserapi.viewmodels.UserViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 

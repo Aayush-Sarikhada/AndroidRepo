@@ -21,7 +21,8 @@ class UserListRVAdapter(private var userList: List<UserInfo>) :
     private val VIEW_TYPE_ITEM = 0
     private val VIEW_TYPE_LOADING = 1
 
-    inner class ItemViewHolder(binding: RowUserDataBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ItemViewHolder(binding: RowUserDataBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         var imgView = binding.imgUser
         var tvId = binding.tvUserId
         var tvName = binding.tvUserName
@@ -29,8 +30,6 @@ class UserListRVAdapter(private var userList: List<UserInfo>) :
         var tvEmail = binding.tvUserEmail
 
         init {
-            binding
-
             binding.root.setOnLongClickListener {
                 val userId = userList[adapterPosition].id
                 with(binding.root.context) {
@@ -44,12 +43,12 @@ class UserListRVAdapter(private var userList: List<UserInfo>) :
         }
     }
 
-    class LoadingViewHolder(binding: RowLoadingBinding): RecyclerView.ViewHolder(binding.root) {
+    class LoadingViewHolder(binding: RowLoadingBinding) : RecyclerView.ViewHolder(binding.root) {
         val progressUsers = binding.progressCircularUsers
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return if(viewType == VIEW_TYPE_ITEM) {
+        return if (viewType == VIEW_TYPE_ITEM) {
             val view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.row_user_data, parent, false)
             val binding = RowUserDataBinding.bind(view)
@@ -63,9 +62,9 @@ class UserListRVAdapter(private var userList: List<UserInfo>) :
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if(holder is ItemViewHolder) {
-            populateItemRows(holder,position)
-        } else if(holder is LoadingViewHolder) {
+        if (holder is ItemViewHolder) {
+            populateItemRows(holder, position)
+        } else if (holder is LoadingViewHolder) {
             showLoadingView(holder, position)
         }
     }
@@ -80,11 +79,11 @@ class UserListRVAdapter(private var userList: List<UserInfo>) :
         val oldList = userList
         userList = newList
         Log.d("DEBUG IN RVADAPTER", userList.toString())
-        notifyItemRangeInserted(oldList.size-1,newList.size)
+        notifyItemRangeInserted(oldList.size - 1, newList.size)
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if(userList[position].id == -1) {
+        return if (userList[position].id == -1) {
             VIEW_TYPE_LOADING
         } else {
             VIEW_TYPE_ITEM

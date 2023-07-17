@@ -1,7 +1,6 @@
 package com.example.webservices.adequateshopuserapi.interfaces.interceptors
 
 import android.content.Context
-import android.util.Log
 import com.example.webservices.adequateshopuserapi.Constants
 import com.example.webservices.adequateshopuserapi.common.Headers
 import okhttp3.Interceptor

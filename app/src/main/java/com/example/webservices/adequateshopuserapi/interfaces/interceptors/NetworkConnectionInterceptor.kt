@@ -1,11 +1,9 @@
 package com.example.webservices.adequateshopuserapi.interfaces.interceptors
 
 import android.content.Context
-import android.net.ConnectivityManager
 import com.example.webservices.adequateshopuserapi.common.extensions.NoConnectivityException
 import okhttp3.Interceptor
 import okhttp3.Interceptor.Chain
-import okhttp3.Request
 import okhttp3.Response
 import java.io.IOException
 
@@ -16,15 +14,13 @@ class NetworkConnectionInterceptor(private val context: Context) :
         if (!isConnected) {
             throw NoConnectivityException()
         }
-        val builder: Request.Builder = chain.request().newBuilder()
+        val builder = chain.request().newBuilder()
         return chain.proceed(builder.build())
     }
 
     private val isConnected: Boolean
         get() {
-            val connectivityManager =
-                context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-            val netInfo = connectivityManager.activeNetworkInfo
-            return netInfo != null && netInfo.isConnected
+            // TODO: add network checking here
+            return false
         }
 }

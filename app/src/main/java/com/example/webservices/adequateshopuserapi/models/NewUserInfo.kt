@@ -1,6 +1,5 @@
 package com.example.webservices.adequateshopuserapi.models
 
-
 import com.google.gson.annotations.SerializedName
 
 data class NewUserInfo(
