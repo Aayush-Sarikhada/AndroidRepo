@@ -14,23 +14,31 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <!--    Theme for RecyclerView practice app-->
+    <style name="Base.Theme.ArithmeticRVApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <!--    Theme for stock exchange UI-->
     <style name="Base.Theme.StockExchangeUI" parent="Theme.MaterialComponents.NoActionBar">
         <item name="colorPrimary">@color/white</item>
     </style>
 
     <style name="Theme.StockExchangeUI" parent="Base.Theme.StockExchangeUI" />
 
-    <style name="spinnerItemStyle">
-        <item name="android:colorBackground">@android:color/transparent</item>
-    </style>
-
-    <!--    Styles for NFT app-->
+    <!--    Theme for NFT app-->
     <style name="Base.Theme.NFTBazaar" parent="Theme.Material3.Light.NoActionBar">
         <item name="android:statusBarColor">#3EBFAA</item>
         <item name="colorPrimary">@color/primary</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="fontFamily">@font/inter_font</item>
         <item name="android:navigationBarColor">@color/primary</item>
+    </style>
+
+    <!--    spinner item style      -->
+    <style name="spinnerItemStyle">
+        <item name="android:colorBackground">@android:color/transparent</item>
     </style>
 
     <!--    App title logo style    -->

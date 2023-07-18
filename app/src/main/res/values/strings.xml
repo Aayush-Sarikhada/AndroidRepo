@@ -96,4 +96,18 @@
     <string name="create_your_account">Create your account</string>
     <string name="signup_success">Sign up success!</string>
 
+    <!--    Arithmetic recycler view strings    -->
+    <string name="add_more">Add More</string>
+    <string name="plus_icon">+</string>
+    <string name="first_number">First number</string>
+    <string name="multiply_icon">X</string>
+    <string name="second_number">Second number</string>
+    <string name="total">Total:</string>
+    <string name="add_more_images">Add more Images</string>
+    <string name="delete_this_spinner">Delete this spinner</string>
+    <string name="delete_this_image">Delete this image</string>
+    <string name="add_more_cards">Add more cards</string>
+    <string name="delete_this_card">Delete this card</string>
+    <string name="add_spinner">Add Spinner</string>
+    <string name="add_image">Add Image</string>
 </resources>

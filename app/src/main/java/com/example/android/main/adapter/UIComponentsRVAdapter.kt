@@ -19,7 +19,7 @@ class UIComponentsRVAdapter(private val context: Context, private val dataList: 
 
         init {
             btnStartActivity.setOnClickListener {
-                context.startActivity(Intent(context, dataList[absoluteAdapterPosition].startActivity))
+                context.startActivity(Intent(context, dataList[adapterPosition].startActivity))
             }
         }
     }

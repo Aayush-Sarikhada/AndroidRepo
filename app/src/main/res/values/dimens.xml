@@ -132,4 +132,28 @@
     <dimen name="corner_radius_twelve_dp">12dp</dimen>
 
     <dimen name="fifty_dp">50dp</dimen>
+
+    <!--    Arithmetic recycler view dimensions     -->
+    <dimen name="padding_main_activity">12dp</dimen>
+    <dimen name="elevation_arithmetic_card">2dp</dimen>
+    <dimen name="padding_bottom_arithmetic_card">8dp</dimen>
+    <dimen name="padding_icon_medium">8dp</dimen>
+    <dimen name="padding_icon_small">4dp</dimen>
+    <dimen name="margin_start_first_number">20dp</dimen>
+    <dimen name="margin_top_first_number">30dp</dimen>
+    <dimen name="margin_end_second_number">20dp</dimen>
+    <dimen name="min_height">48dp</dimen>
+    <dimen name="margin_horizontal_multiply">8dp</dimen>
+    <dimen name="margin_vertical_plus">12dp</dimen>
+    <dimen name="margin_top_image_rv">16dp</dimen>
+    <dimen name="margin_top_total">8dp</dimen>
+    <dimen name="text_size_total">20sp</dimen>
+    <dimen name="height_divider">1dp</dimen>
+    <dimen name="margin_vertical_divider">8dp</dimen>
+
+    <dimen name="margin_view_image">4dp</dimen>
+    <dimen name="height_image">174dp</dimen>
+
+    <dimen name="margin_view_spinner">8dp</dimen>
+    <dimen name="margin_end_spinner">38dp</dimen>
 </resources>
