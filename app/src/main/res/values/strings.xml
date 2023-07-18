@@ -146,4 +146,13 @@
     <string name="send_message">Send Message</string>
     <string name="content_desc_delete_all_messages">Delete all messages</string>
     <string name="preview">Preview</string>
+
+    <!--    Web view Strings    -->
+    <string name="enter_url">Enter url here</string>
+    <string name="default_landing_page">https://www.BBC.com</string>
+    <string name="https">https://</string>
+    <string name="http">http://</string>
+    <string name="www_dot">www.</string>
+    <string name="message_to_send">Swinging on a star.</string>
+
 </resources>
