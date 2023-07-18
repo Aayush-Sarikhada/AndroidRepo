@@ -1,6 +1,6 @@
 <resources>
     <!--    base home screen strings    -->
-    <string name="app_name">JavaPractice</string>
+    <string name="app_name">Android Training</string>
     <string name="activity_name">activity name</string>
 
     <!--    stock exchange screen strings   -->
@@ -110,4 +110,29 @@
     <string name="delete_this_card">Delete this card</string>
     <string name="add_spinner">Add Spinner</string>
     <string name="add_image">Add Image</string>
+
+<!--    activities and fragment example     -->
+    <string name="main_activity">Main Activity</string>
+    <string name="go_to_next_activity">Go To Next Activity</string>
+    <string name="fragment_transactions">Fragment Transactions</string>
+    <string name="intents">Intents</string>
+    <string name="send_text">Send Text</string>
+    <string name="ui_screens">UI Screens</string>
+    <string name="components">Components</string>
+    <string name="no_data_available">No Data Available</string>
+    <string name="action_bar_title_ui_screens">UI Screens</string>
+    <string name="action_bar_title_components">Components</string>
+    <string name="pick_image">Pick Image</string>
+    <string name="capture_image">Capture Image</string>
+    <string name="image_picker">Image Picker</string>
+    <string name="enter_your_message">enter your message</string>
+    <string name="pass_text">Pass Text:</string>
+    <string name="send_email">Send email</string>
+    <string name="email_subject">Email Subject</string>
+    <string name="email_message">Email message</string>
+    <string name="web_browser">Web Browser</string>
+    <string name="pending_intents">Pending Intents</string>
+    <string name="alarm_manger">Alarm Manger</string>
+    <string name="notification_manager">Notification Manager</string>
+    <string name="activity_started_by_alarm_manager">Activity started by alarm manager</string>
 </resources>
