@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnIntents"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_start_button"
+                    android:layout_marginTop="@dimen/margin_top_button"
+                    android:layout_marginEnd="@dimen/margin_end_button"
+                    android:text="@string/intents" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnImagePicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_start_button"
+                    android:layout_marginEnd="@dimen/margin_end_button"
+                    android:text="@string/image_picker" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnWebBrowser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_start_button"
+                    android:layout_marginEnd="@dimen/margin_end_button"
+                    android:text="@string/web_browser" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPendingIntent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_start_button"
+                    android:layout_marginEnd="@dimen/margin_end_button"
+                    android:text="@string/pending_intents" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

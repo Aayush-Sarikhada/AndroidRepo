@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android.R
+import com.example.android.activitiesandfragments.views.IntentsActivity
 import com.example.android.databinding.ActivityMainBinding
 import com.example.android.main.adapter.UIComponentsRVAdapter
 import com.example.android.main.model.ScreenType
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
             ScreenType(0, name = "Stock exchange UI", StockExchangeActivity::class.java),
             ScreenType(0, name = "NFT Bazaar", AuthenticationActivity::class.java),
             ScreenType(0, name = "Arithmetic Recycler View", ArithmeticRVActivity::class.java),
+            ScreenType(0, name = "Intents with Activities and fragments", IntentsActivity::class.java)
         )
     }
 }

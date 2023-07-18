@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/components" android:title="@string/components" android:icon="@drawable/baseline_android_24"/>
+    <item android:id="@+id/uiScreens" android:title="@string/ui_screens" android:icon="@drawable/baseline_screenshot_24"/>
+</menu>
