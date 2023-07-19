@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".base.BaseApplication"
@@ -76,6 +76,10 @@
         <activity
             android:name=".webservices.views.UserDetailActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".webservices.views.imageupload.ImageUploadActivity"
+            android:exported="true" />
 
     </application>
 
