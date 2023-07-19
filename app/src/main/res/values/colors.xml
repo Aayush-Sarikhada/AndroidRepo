@@ -8,7 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-<!--    stock exchange screen       -->
+    <!--    stock exchange screen colors      -->
     <color name="backgroundColor">#1D2123</color>
     <color name="card_background_color">#2F3234</color>
     <color name="border_stroke_color">#686666</color>
@@ -20,4 +20,16 @@
     <color name="orange">#FFA500</color>
     <color name="text_color_on_card">#656464</color>
     <color name="divider_line_color">#818080</color>
+
+    <!--    nft bazaar screen colors-->
+    <color name="primary">#705FAA</color>
+    <color name="back_to_sign_in_color">#787876</color>
+    <color name="nft_collection_price_color">#25D76C</color>
+    <color name="nft_card_background_color">#DBE2E4</color>
+    <color name="button_background_color">#705FAA</color>
+    <color name="red_color">#FF3D00</color>
+    <color name="purple_color">#705FAA</color>
+    <color name="text_color_black">#CC000000</color>
+    <color name="text_color_light_black">#80000000</color>
+    <color name="text_color_button_resend">#99000000</color>
 </resources>

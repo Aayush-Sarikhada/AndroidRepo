@@ -2,4 +2,6 @@
 <resources>
     <integer name="heading_exchange_weight">1</integer>
     <integer name="divider_gray_view_weight">1</integer>
+    <integer name="otp_dialog_weight_sum">4</integer>
+    <integer name="otp_dialog_layout_weight">1</integer>
 </resources>
