@@ -113,8 +113,10 @@
     <dimen name="text_size_twelve">12sp</dimen>
     <dimen name="text_size_sixteen">16sp</dimen>
     <dimen name="text_size_fourteen">14sp</dimen>
+    <dimen name="text_size_forty">40sp</dimen>
 
     <dimen name="margin_four_dp">4dp</dimen>
+    <dimen name="margin_fourteen_dp">14dp</dimen>
     <dimen name="margin_ten_dp">10dp</dimen>
     <dimen name="margin_seventy_four_dp">74dp</dimen>
     <dimen name="margin_twelve_dp">12dp</dimen>
@@ -156,4 +158,10 @@
 
     <dimen name="margin_view_spinner">8dp</dimen>
     <dimen name="margin_end_spinner">38dp</dimen>
+
+<!--    activities and fragment dimensions      -->
+    <dimen name="margin_top_button">24dp</dimen>
+    <dimen name="margin_start_button">16dp</dimen>
+    <dimen name="margin_end_button">16dp</dimen>
+    <dimen name="height_image_picked">200dp</dimen>
 </resources>

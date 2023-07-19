@@ -23,6 +23,14 @@
         </activity>
 
         <activity
+            android:name=".activitiesandfragments.views.IntentsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activitiesandfragments.views.BrowserActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".stockexchangeui.StockExchangeActivity"
             android:exported="false"
             android:theme="@style/Theme.StockExchangeUI" />
