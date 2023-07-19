@@ -7,6 +7,7 @@ import com.example.android.practical3.views.HomeWithNavGraphActivity
 import com.example.android.recyclerViewPractice.views.ArithmeticRVActivity
 import com.example.android.stockexchangeui.StockExchangeActivity
 import com.example.android.webservices.views.SignUpActivity
+import com.example.android.webservices.views.imageupload.ImageUploadActivity
 
 data class ScreenType<out T>(
     val id: Int,
@@ -25,7 +26,8 @@ data class ScreenType<out T>(
                     IntentsActivity::class.java
                 ),
                 ScreenType(4, name = "Practical chapter 3", HomeWithNavGraphActivity::class.java),
-                ScreenType(5, name = "Web Services", SignUpActivity::class.java)
+                ScreenType(5, name = "Web Services", SignUpActivity::class.java),
+                ScreenType(6, name = "Image Upload", ImageUploadActivity::class.java)
             )
         }
     }
