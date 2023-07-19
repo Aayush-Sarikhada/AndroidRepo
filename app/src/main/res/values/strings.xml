@@ -168,5 +168,8 @@
     <string name="name_must_not_be_empty">Name must not be empty!</string>
     <string name="please_enter_valid_email">Please enter valid email!</string>
     <string name="password_length_error">password min length 6 and max length 8</string>
-
+    <string name="upload">Upload</string>
+    <string name="select_image">Select Image</string>
+    <string name="upload_image">Upload Image</string>
+    <string name="see_image">See image</string>
 </resources>

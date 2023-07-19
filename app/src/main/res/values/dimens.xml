@@ -107,6 +107,7 @@
     <dimen name="nft_img_height">126dp</dimen>
 
     <dimen name="margin_twenty_dp">20dp</dimen>
+    <dimen name="margin_twenty_six_dp">26dp</dimen>
     <dimen name="text_size_twenty_five">25sp</dimen>
     <dimen name="text_size_twenty_four">24sp</dimen>
     <dimen name="text_size_thirty">30sp</dimen>
@@ -178,4 +179,8 @@
     <dimen name="til_margin_horizontal">24dp</dimen>
     <dimen name="til_margin_top">48dp</dimen>
     <dimen name="tv_preview_margin_top">36dp</dimen>
+
+    <!--    Image upload activity dimensions     -->
+    <dimen name="height_image_to_upload">250dp</dimen>
+    <dimen name="width_image_to_upload">250dp</dimen>
 </resources>
