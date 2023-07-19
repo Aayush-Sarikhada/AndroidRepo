@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_gradient"
+            tools:context=".views.AuthenticationActivity">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_signup_app_name_logo"
+                style="@style/app_title_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_forty_eight_dp"
+                android:text="@string/nft_bazaar"
+                app:layout_constraintEnd_toStartOf="@id/btn_login"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_login"
+                style="@style/button_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/log_in"
+                app:layout_constraintBottom_toBottomOf="@id/tv_signup_app_name_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toEndOf="@id/tv_signup_app_name_logo" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_create_your_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_font"
+                android:text="@string/create_your_account"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_sixteen"
+                app:layout_constraintStart_toStartOf="@id/tv_signup_app_name_logo"
+                app:layout_constraintTop_toBottomOf="@id/tv_signup_app_name_logo" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_full_name"
+                style="@style/Theme.app.EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_thirty_dp"
+                app:layout_constraintEnd_toEndOf="@id/btn_login"
+                app:layout_constraintStart_toStartOf="@id/tv_signup_app_name_logo"
+                app:layout_constraintTop_toBottomOf="@id/tv_create_your_account">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_full_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/full_name"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_signup_email"
+                style="@style/Theme.app.EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_twenty_dp"
+                app:layout_constraintEnd_toEndOf="@id/til_full_name"
+                app:layout_constraintStart_toStartOf="@id/til_full_name"
+                app:layout_constraintTop_toBottomOf="@id/til_full_name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_signup_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/email_address"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_signup_password"
+                style="@style/Theme.app.EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_twenty_dp"
+                app:layout_constraintEnd_toEndOf="@id/til_signup_email"
+                app:layout_constraintStart_toStartOf="@id/til_signup_email"
+                app:layout_constraintTop_toBottomOf="@id/til_signup_email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_signup_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/password_minimum_8_characters"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_select_gender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_eight_dp"
+                android:text="@string/select_your_gender"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@id/til_signup_password"
+                app:layout_constraintStart_toStartOf="@id/til_signup_password"
+                app:layout_constraintTop_toBottomOf="@id/til_signup_password" />
+
+            <RadioGroup
+                android:id="@+id/rg_gender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_eight_dp"
+                app:layout_constraintEnd_toEndOf="@id/til_signup_password"
+                app:layout_constraintStart_toStartOf="@id/til_signup_password"
+                app:layout_constraintTop_toBottomOf="@id/tv_select_gender"
+                app:useMaterialThemeColors="true">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_male"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/male" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_female"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/female" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_other"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other" />
+
+            </RadioGroup>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_by_signing_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_sixteen_dp"
+                android:text="@string/by_signing_up_you_accept_our"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_twelve"
+                app:layout_constraintStart_toStartOf="@id/til_signup_password"
+                app:layout_constraintTop_toBottomOf="@id/rg_gender" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_four_dp"
+                android:text="@string/terms_and_conditions"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_twelve"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tv_by_signing_up"
+                app:layout_constraintStart_toEndOf="@id/tv_by_signing_up" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_signup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_twenty_dp"
+                android:backgroundTint="@color/primary"
+                android:text="@string/sign_up"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_twelve"
+                app:cornerRadius="@dimen/corner_radius_eight_dp"
+                app:layout_constraintEnd_toEndOf="@id/btn_login"
+                app:layout_constraintStart_toStartOf="@id/tv_signup_app_name_logo"
+                app:layout_constraintTop_toBottomOf="@id/tv_by_signing_up" />
+
+            <View
+                android:id="@+id/view_divider_line_one"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/margin_twenty_eight_dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toStartOf="@id/tv_or_divider"
+                app:layout_constraintStart_toStartOf="@id/btn_signup"
+                app:layout_constraintTop_toBottomOf="@id/btn_signup" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_or_divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_thirty_two_dp"
+                android:text="@string/or"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@id/view_divider_line_one"
+                app:layout_constraintEnd_toStartOf="@id/view_divider_line_two"
+                app:layout_constraintStart_toEndOf="@id/view_divider_line_one"
+                app:layout_constraintTop_toTopOf="@id/view_divider_line_one" />
+
+            <View
+                android:id="@+id/view_divider_line_two"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="@id/tv_or_divider"
+                app:layout_constraintEnd_toEndOf="@id/btn_signup"
+                app:layout_constraintStart_toEndOf="@id/tv_or_divider"
+                app:layout_constraintTop_toTopOf="@id/tv_or_divider" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_continue_with_google"
+                style="@style/button_style"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_twenty_four_dp"
+                android:text="@string/continue_with_google"
+                app:icon="@drawable/google_icon"
+                app:layout_constraintEnd_toEndOf="@id/btn_signup"
+                app:layout_constraintStart_toStartOf="@id/btn_signup"
+                app:layout_constraintTop_toBottomOf="@id/view_divider_line_one"
+                app:strokeColor="@color/black" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
