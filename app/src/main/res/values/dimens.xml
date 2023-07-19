@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    home screen dimensions      -->
+    <dimen name="padding_start_activity_row">8dp</dimen>
+
+    <!--    stock exchange screen dimensions    -->
+    <dimen name="toolbar_padding">8dp</dimen>
+    <dimen name="toolbar_menu_margin_start">20dp</dimen>
+    <dimen name="toolbar_notification_margin_end">20dp</dimen>
+    <dimen name="toolbar_title_size">20sp</dimen>
+    <dimen name="toolbar_title_spacing" format="float">1.02</dimen>
+    <dimen name="border_stroke_width">1dp</dimen>
+    <dimen name="toolbar_icon_border_corner_radius">4dp</dimen>
+    <dimen name="tab_indicator_height">0dp</dimen>
+    <dimen name="toolbar_icon_padding">8dp</dimen>
+
+    <dimen name="heading_margin_start">20dp</dimen>
+    <dimen name="heading_margin_top">20dp</dimen>
+    <dimen name="heading_margin_end">20dp</dimen>
+
+    <dimen name="heading_exchange_text_size">28sp</dimen>
+    <dimen name="heading_date_text_size">12sp</dimen>
+
+    <dimen name="divider_margin_top">8dp</dimen>
+    <dimen name="divider_margin_start">20dp</dimen>
+    <dimen name="divider_margin_end">20dp</dimen>
+
+    <dimen name="divider_white_view_width">4dp</dimen>
+    <dimen name="divider_white_view_height">1dp</dimen>
+    <dimen name="divider_gray_view_height">1dp</dimen>
+
+    <dimen name="card_radius">8dp</dimen>
+    <dimen name="exchange_selector_card_radius">8dp</dimen>
+    <dimen name="card_divider_line_margin_top">24dp</dimen>
+    <dimen name="card_divider_line_3_margin_top">20dp</dimen>
+
+    <!-- stocks spinner view row dimension -->
+    <dimen name="padding_stock_spinner_row">4dp</dimen>
+
+    <!-- exchange card view dimension -->
+    <dimen name="exchange_card_corner_radius">8dp</dimen>
+    <dimen name="exchange_card_padding">20dp</dimen>
+
+    <dimen name="exchange_spinner_margin_top">8dp</dimen>
+
+    <dimen name="exchange_stock_price_margin_top">8dp</dimen>
+
+    <dimen name="divider_line_1_margin_start">8dp</dimen>
+    <dimen name="divider_line_1_width">48dp</dimen>
+    <dimen name="divider_line_1_height">1dp</dimen>
+
+    <dimen name="price_amount_view_1_margin_start">8dp</dimen>
+    <dimen name="price_amount_view_2_margin_start">8dp</dimen>
+    <dimen name="price_amount_view_1_padding">8dp</dimen>
+    <dimen name="price_amount_view_2_padding">8dp</dimen>
+
+    <dimen name="minus_img_padding">1dp</dimen>
+    <dimen name="plus_img_padding">1dp</dimen>
+    <dimen name="plus_img_margin_start">8dp</dimen>
+
+    <dimen name="share_amount_1_margin_start">8dp</dimen>
+    <dimen name="share_amount_2_margin_start">8dp</dimen>
+    <dimen name="share_amount_1_text_size">20sp</dimen>
+    <dimen name="share_amount_2_text_size">20sp</dimen>
+
+    <dimen name="price_label_margin_top">4dp</dimen>
+    <dimen name="price_label_text_size">12sp</dimen>
+    <dimen name="price_value_text_size">12sp</dimen>
+
+    <!-- exchange arrows dimensions -->
+    <dimen name="exchange_arrow_height">36dp</dimen>
+    <dimen name="exchange_arrow_width">36dp</dimen>
+    <dimen name="exchange_arrow_margin_top">8dp</dimen>
+
+    <dimen name="you_receive_margin_top">8dp</dimen>
+    <dimen name="you_receive_spinner_margin_top">8dp</dimen>
+
+    <dimen name="divider_line_2_margin_start">8dp</dimen>
+    <dimen name="divider_line_2_width">48dp</dimen>
+    <dimen name="divider_line_2_height">1dp</dimen>
+
+    <dimen name="transaction_cost_label_margin_top">8dp</dimen>
+    <dimen name="exchange_stock_drawable_padding">4dp</dimen>
+
+    <dimen name="exchange_for_btn_margin_top">20dp</dimen>
+    <dimen name="exchange_for_btn_padding">8dp</dimen>
+    <dimen name="exchange_for_btn_margin_horizontal">24dp</dimen>
+    <dimen name="exchange_for_text_size">16sp</dimen>
+    <dimen name="exchange_for_text_padding">4dp</dimen>
+
+    <!-- bottom app bar dimensions -->
+    <dimen name="app_bar_elevation">0dp</dimen>
+    <dimen name="app_bar_start_inset">28dp</dimen>
+    <dimen name="app_bar_end_inset">28dp</dimen>
+    <dimen name="fab_cradle_radius">24dp</dimen>
+    <dimen name="fab_cradle_margin">8dp</dimen>
+
+    <!-- floating action button dimensions -->
+    <dimen name="fab_elevation">4dp</dimen>
+
+</resources>
