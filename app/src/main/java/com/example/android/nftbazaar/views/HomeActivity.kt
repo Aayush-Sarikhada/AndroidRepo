@@ -3,9 +3,9 @@ package com.example.android.nftbazaar.views
 import android.content.Intent
 import android.os.Bundle
 import com.example.android.R
+import com.example.android.base.BaseActivity
 import com.example.android.databinding.ActivityHomeBinding
 import com.example.android.nftbazaar.Constant
-import com.example.android.nftbazaar.base.BaseActivity
 
 class HomeActivity : BaseActivity() {
 

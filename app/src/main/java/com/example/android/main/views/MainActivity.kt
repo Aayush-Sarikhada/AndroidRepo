@@ -5,14 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android.R
-import com.example.android.activitiesandfragments.views.IntentsActivity
 import com.example.android.databinding.ActivityMainBinding
 import com.example.android.main.adapter.UIComponentsRVAdapter
 import com.example.android.main.model.ScreenType
-import com.example.android.nftbazaar.views.AuthenticationActivity
-import com.example.android.practical3.views.HomeWithNavGraphActivity
-import com.example.android.recyclerViewPractice.views.ArithmeticRVActivity
-import com.example.android.stockexchangeui.StockExchangeActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,18 +23,9 @@ class MainActivity : AppCompatActivity() {
         binding.rvActivities.apply {
             layoutManager =
                 LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL, false)
-            adapter = UIComponentsRVAdapter(this@MainActivity, getActivitiesDataList())
+            adapter = UIComponentsRVAdapter(this@MainActivity, ScreenType.getActivitiesDataList())
         }
 
     }
 
-    private fun getActivitiesDataList(): List<ScreenType<AppCompatActivity>> {
-        return listOf(
-            ScreenType(0, name = "Stock exchange UI", StockExchangeActivity::class.java),
-            ScreenType(0, name = "NFT Bazaar", AuthenticationActivity::class.java),
-            ScreenType(0, name = "Arithmetic Recycler View", ArithmeticRVActivity::class.java),
-            ScreenType(0, name = "Intents with Activities and fragments", IntentsActivity::class.java),
-            ScreenType(0, name = "Practical chapter 3", HomeWithNavGraphActivity::class.java)
-        )
-    }
 }

@@ -155,4 +155,18 @@
     <string name="www_dot">www.</string>
     <string name="message_to_send">Swinging on a star.</string>
 
+    <!--    Web service     -->
+    <string name="login">Login</string>
+    <string name="id">Id:</string>
+    <string name="email">Email:</string>
+    <string name="created_on">Created on:</string>
+    <string name="name">Name:</string>
+    <string name="location">Location:</string>
+    <string name="user_created_successfully">User created successfully</string>
+    <string name="create_user">Create User</string>
+    <string name="create_user_on_server">Create User On Server</string>
+    <string name="name_must_not_be_empty">Name must not be empty!</string>
+    <string name="please_enter_valid_email">Please enter valid email!</string>
+    <string name="password_length_error">password min length 6 and max length 8</string>
+
 </resources>
