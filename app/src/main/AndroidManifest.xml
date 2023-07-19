@@ -23,6 +23,10 @@
         </activity>
 
         <activity
+            android:name=".practical3.views.HomeWithNavGraphActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".activitiesandfragments.views.IntentsActivity"
             android:exported="false" />
 
