@@ -1,11 +1,7 @@
 package com.example.android.activitiesandfragments.views
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.result.ActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentManager
@@ -24,18 +20,6 @@ class IntentsActivity : AppCompatActivity() {
         const val REQUEST_KEY = "REQUEST_KEY_MAIN_ACTIVITY"
     }
 
-    private val startForResult =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                val intent = result.data
-                intent?.let {
-                    val data = it.getStringExtra(Constants.Keys.RESULT_KEY_SECOND_ACTIVITY)
-                        ?: Constants.Strings.EMPTY_DATA
-                    Log.d(Constants.Tags.TAG_ACTIVITY_MAIN, data)
-                }
-            }
-        }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_intents)
@@ -44,10 +28,6 @@ class IntentsActivity : AppCompatActivity() {
         setUpBottomNavigation()
         setUpFragment()
         setUpFragmentManagerListener()
-    }
-
-    private fun startBrowserActivityForResult() {
-        startForResult.launch(Intent(this, BrowserActivity::class.java))
     }
 
     private fun setUpFragmentManagerListener() {

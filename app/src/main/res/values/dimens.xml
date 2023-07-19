@@ -108,12 +108,14 @@
 
     <dimen name="margin_twenty_dp">20dp</dimen>
     <dimen name="text_size_twenty_five">25sp</dimen>
+    <dimen name="text_size_twenty_four">24sp</dimen>
     <dimen name="text_size_thirty">30sp</dimen>
     <dimen name="text_size_eighteen">18sp</dimen>
     <dimen name="text_size_twelve">12sp</dimen>
     <dimen name="text_size_sixteen">16sp</dimen>
     <dimen name="text_size_fourteen">14sp</dimen>
     <dimen name="text_size_forty">40sp</dimen>
+    <dimen name="text_size_thirty_six">36sp</dimen>
 
     <dimen name="margin_four_dp">4dp</dimen>
     <dimen name="margin_fourteen_dp">14dp</dimen>
@@ -121,6 +123,7 @@
     <dimen name="margin_seventy_four_dp">74dp</dimen>
     <dimen name="margin_twelve_dp">12dp</dimen>
     <dimen name="margin_forty_eight_dp">48dp</dimen>
+    <dimen name="margin_thirty_six_dp">36dp</dimen>
     <dimen name="margin_twenty_four_dp">24dp</dimen>
     <dimen name="margin_twenty_eight_dp">28dp</dimen>
     <dimen name="margin_thirty_two_dp">32dp</dimen>
@@ -128,7 +131,11 @@
     <dimen name="margin_sixteen_dp">16dp</dimen>
     <dimen name="margin_eight_dp">8dp</dimen>
 
+    <dimen name="elevation_four_dp">4dp</dimen>
+    <dimen name="elevation_eight_dp">8dp</dimen>
+
     <dimen name="padding_thirty_dp">30dp</dimen>
+    <dimen name="padding_eight_dp">8dp</dimen>
 
     <dimen name="corner_radius_eight_dp">8dp</dimen>
     <dimen name="corner_radius_twelve_dp">12dp</dimen>
@@ -164,6 +171,7 @@
     <dimen name="margin_start_button">16dp</dimen>
     <dimen name="margin_end_button">16dp</dimen>
     <dimen name="height_image_picked">200dp</dimen>
+    <dimen name="height_user_image">150dp</dimen>
 
     <!--    practical 3 dimensions  -->
     <dimen name="fab_margin">24dp</dimen>

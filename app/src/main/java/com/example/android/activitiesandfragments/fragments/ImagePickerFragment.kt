@@ -21,13 +21,9 @@ class ImagePickerFragment : Fragment() {
     private var uriList: MutableList<Uri> = mutableListOf()
 
     private val pickImage =
-        registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
-            if (uri == null) {
-            } else {
-                uriList.add(uri)
-                startActivity(Intent(Intent.ACTION_VIEW).apply {
-                    data = uri
-                })
+        registerForActivityResult(ActivityResultContracts.PickMultipleVisualMedia(10)) { uris ->
+            if (uris.isNotEmpty()) {
+                uriList.addAll(uris)
                 setUpImageList()
             }
         }
