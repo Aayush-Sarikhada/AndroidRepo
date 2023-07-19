@@ -4,12 +4,12 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android.R
+import com.example.android.base.BaseActivity
 import com.example.android.databinding.ActivityArithmeticRecyclerViewBinding
 import com.example.android.nftbazaar.utils.VerticalSpaceItemDecoration
 import com.example.android.recyclerViewPractice.Constants
 import com.example.android.recyclerViewPractice.PayloadTypes
 import com.example.android.recyclerViewPractice.adapters.ArithmeticCardRVAdapter
-import com.example.android.recyclerViewPractice.base.BaseActivity
 import com.example.android.recyclerViewPractice.models.ArithmeticCardStateDataModel
 
 class ArithmeticRVActivity : BaseActivity() {

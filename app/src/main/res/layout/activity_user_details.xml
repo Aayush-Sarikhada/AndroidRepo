@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.webservices.adequateshopuserapi.views.UserDetailActivity">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgSingleUser"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/margin_twenty_four_dp"
+            android:layout_marginTop="@dimen/margin_sixteen_dp"
+            android:src="@drawable/ic_launcher_background"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/tvSingleUserId"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressUserLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSingleUserId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_sixteen_dp"
+            android:layout_marginTop="@dimen/margin_sixteen_dp"
+            android:layout_marginEnd="@dimen/margin_sixteen_dp"
+            android:text="@string/id"
+            android:textSize="@dimen/text_size_twenty_four"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/tvSingleUserName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgSingleUser" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSingleUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_sixteen_dp"
+            android:layout_marginTop="@dimen/margin_sixteen_dp"
+            android:layout_marginEnd="@dimen/margin_sixteen_dp"
+            android:text="@string/name"
+            android:textSize="@dimen/text_size_twenty_four"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/tvSingleUserCreated"
+            app:layout_constraintEnd_toEndOf="@id/tvSingleUserId"
+            app:layout_constraintStart_toStartOf="@id/tvSingleUserId"
+            app:layout_constraintTop_toBottomOf="@id/tvSingleUserId" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSingleUserCreated"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_sixteen_dp"
+            android:text="@string/created_on"
+            android:textSize="@dimen/text_size_twenty_four"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/tvSingleUserLocation"
+            app:layout_constraintEnd_toEndOf="@+id/tvSingleUserName"
+            app:layout_constraintStart_toStartOf="@+id/tvSingleUserName"
+            app:layout_constraintTop_toBottomOf="@+id/tvSingleUserName" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSingleUserLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_sixteen_dp"
+            android:text="@string/location"
+            android:textSize="@dimen/text_size_twenty_four"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/tvSingleUserEmail"
+            app:layout_constraintEnd_toEndOf="@+id/tvSingleUserName"
+            app:layout_constraintStart_toStartOf="@+id/tvSingleUserName"
+            app:layout_constraintTop_toBottomOf="@+id/tvSingleUserCreated" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSingleUserEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_sixteen_dp"
+            android:text="@string/email"
+            android:textSize="@dimen/text_size_twenty_four"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvSingleUserCreated"
+            app:layout_constraintStart_toStartOf="@+id/tvSingleUserCreated"
+            app:layout_constraintTop_toBottomOf="@+id/tvSingleUserLocation" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
